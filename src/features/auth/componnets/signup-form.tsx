@@ -49,6 +49,7 @@ export const SignupForm = () => {
       onSuccess: () => {
         router.push("/")
       }, onError: (err) => {
+        console.error(err)
       }
     })
   }
@@ -67,13 +68,13 @@ export const SignupForm = () => {
                 <div className={"grid gap-6"}>
                   <div className={"flex flex-col gap-4"}>
                     <Button variant={"outline"} className={"w-full"}>
+                      <Image src={"/logos/github.svg"} alt={"github-logo"} width={20} height={20}/>
                       Continue with GitHub
-                      <GithubIcon/>
                     </Button>
 
                     <Button variant={"outline"} className={"w-full"}>
+                      <Image src={"/logos/google.svg"} alt={"google-logo"} width={20} height={20}/>
                       Continue with Google
-                      <LetterTextIcon/>
                     </Button>
                   </div>
 

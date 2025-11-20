@@ -62,15 +62,16 @@ const LoginForm = () => {
                         variant={"outline"}
                         className={"w-full"}
                     >
+                      <Image src={"/logos/github.svg"} alt={"github-logo"} width={20} height={20}/>
                       Continue with GitHub
-                      <GithubIcon/>
+
                     </Button>
                     <Button
                         variant={"outline"}
                         className={"w-full"}
                     >
+                      <Image src={"/logos/google.svg"} alt={"google-logo"} width={20} height={20}/>
                       Continue with Google
-                      <LetterTextIcon/>
                     </Button>
                   </div>
                   <div className={"grid gap-6"}>

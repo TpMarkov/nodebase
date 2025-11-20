@@ -1,17 +1,18 @@
-import {z} from 'zod';
-import {baseProcedure, createTRPCRouter, protectedProcedure} from '../init';
+import {createTRPCRouter, protectedProcedure} from '../init';
 import prisma from "@/lib/db"
-import {TRPCError} from "@trpc/server";
+import {inngest} from "@/inngest/client";
 
 export const appRouter = createTRPCRouter({
-          getUsers: protectedProcedure.query(({ctx}) => {
-            if (!ctx.auth.user.id) throw new TRPCError({code: "UNAUTHORIZED"});
-
-            return prisma.user.findMany({
-              where: {
-                id: ctx.auth.user.id
+          createWorkflow: protectedProcedure.mutation(async ({ctx}) => {
+            return inngest.send({
+              name: "create/workflow",
+              data: {
+                name: "First name"
               }
-            });
+            })
+          }),
+          getWorkflows: protectedProcedure.query(async (ctx) => {
+            return prisma.workflow.findMany()
           })
         }
     )

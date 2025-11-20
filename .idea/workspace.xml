@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/api/inngest/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/inngest/client.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/inngest/functions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/logoutButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/logoutButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/sign-up/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/sign-up/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth-layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/componnets/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/componnets/login-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/componnets/signup-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/componnets/signup-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth-utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trpc/routers/_app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/routers/_app.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +28,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -84,7 +103,9 @@
       <workItem from="1763569180474" duration="3922000" />
       <workItem from="1763573977009" duration="1147000" />
       <workItem from="1763575163143" duration="2221000" />
-      <workItem from="1763588715095" duration="309000" />
+      <workItem from="1763588715095" duration="390000" />
+      <workItem from="1763614350015" duration="4469000" />
+      <workItem from="1763619947897" duration="4986000" />
     </task>
     <servers />
   </component>

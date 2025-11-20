@@ -1,0 +1,46 @@
+Index: src/app/(auth)/layout.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\n\r\nconst Layout = () => {\r\n  return (\r\n      <div>Layout</div>\r\n  )\r\n}\r\nexport default Layout\r\n
+===================================================================
+diff --git a/src/app/(auth)/layout.tsx b/src/app/(auth)/layout.tsx
+--- a/src/app/(auth)/layout.tsx	(revision b8eed2a94121af3dc556bbd094ca8854cd0e6133)
++++ b/src/app/(auth)/layout.tsx	(date 1763618129742)
+@@ -1,8 +1,11 @@
+ import React from 'react'
++import AuthLayout from "@/components/auth-layout";
+ 
+-const Layout = () => {
++const Layout = ({children}: { children: React.ReactNode }) => {
+   return (
+-      <div>Layout</div>
++      <AuthLayout>
++        {children}
++      </AuthLayout>
+   )
+ }
+ export default Layout
+Index: src/components/auth-layout.tsx
+===================================================================
+diff --git a/src/components/auth-layout.tsx b/src/components/auth-layout.tsx
+--- a/src/components/auth-layout.tsx	(revision b8eed2a94121af3dc556bbd094ca8854cd0e6133)
++++ b/src/components/auth-layout.tsx	(date 1763618036200)
+@@ -1,0 +1,18 @@
++import React from 'react'
++import Link from 'next/link'
++import Image from 'next/image'
++
++const AuthLayout = ({children}: { children: React.ReactNode }) => {
++  return (
++      <div className={"bg-muted flex min-h-svh flex-col justify-center gap-6 p-6 md:p-10 items-center"}>
++        <div className={"flex w-full max-w-sm flex-col gap-6"}>
++          <Link href={"/"} className={"flex items-center gap-2 self-center font-medium"}>
++            <Image src={"logos/logo.svg"} alt={"logo"} width={30} height={30}/>
++            NodeBase
++          </Link>
++          {children}
++        </div>
++      </div>
++  )
++}
++export default AuthLayout
