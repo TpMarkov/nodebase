@@ -12,6 +12,12 @@ const Page = () => {
   const {data} = useQuery(trpc.getWorkflows.queryOptions())
 
 
+  const testAi = useMutation(trpc.testAi.mutationOptions({
+    onSuccess: (data) => console.log(data),
+    onError: (err) => console.error("AI error:", err)
+  }))
+
+
   const create = useMutation(trpc.createWorkflow.mutationOptions({
     onSuccess: async (data: any) => {
       queryClient.invalidateQueries(trpc.getWorkflows.queryOptions())
@@ -23,6 +29,11 @@ const Page = () => {
     {JSON.stringify(data, null, 2)}
     <Button onClick={() => create.mutate()}>
       Create workflow
+    </Button>
+    <Button
+        disabled={testAi.isPending}
+        onClick={() => testAi.mutate()}>
+      Test Ai
     </Button>
     <LogoutButton/>
   </div>

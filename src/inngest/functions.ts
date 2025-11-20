@@ -1,18 +1,22 @@
 import {inngest} from "./client";
-import prisma from "@/lib/db";
+import {createGoogleGenerativeAI} from "@ai-sdk/google";
+import {generateText} from "ai"
+import {createOpenAI} from "@ai-sdk/openai";
 
-export const createWorkflow = inngest.createFunction(
-    {id: "create-workflow"},
-    {event: "create/workflow"},
+const google = createGoogleGenerativeAI();
+const openAi = createOpenAI()
+
+export const execute = inngest.createFunction(
+    {id: "execute-ai"},
+    {event: "execute/ai"},
     async ({event, step}) => {
-
-
-      return step.run("create-workflow", () => {
-        return prisma.workflow.create({
-          data: {
-            name: event.data.name,
-          }
-        });
-      });
-    },
+      const {steps} = await step.ai.wrap("gemini-generate-text", generateText, {
+        system: "You are a helpful assistant",
+        model: google("gemini-2.5-flash"),
+        prompt: "What is 2 + 2?"
+      })
+      return steps
+    }
 );
+
+

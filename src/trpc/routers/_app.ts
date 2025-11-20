@@ -3,6 +3,13 @@ import prisma from "@/lib/db"
 import {inngest} from "@/inngest/client";
 
 export const appRouter = createTRPCRouter({
+          testAi: protectedProcedure.mutation(async ({ctx}) => {
+            await inngest.send({
+              name: "execute/ai"
+            })
+
+            return {success: true, message: "Job queued"}
+          }),
           createWorkflow: protectedProcedure.mutation(async ({ctx}) => {
             return inngest.send({
               name: "create/workflow",
