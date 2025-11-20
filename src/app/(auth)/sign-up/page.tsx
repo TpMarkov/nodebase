@@ -6,7 +6,8 @@ const Page = async () => {
   await requireUnauth()
 
   return (
-      <div><SignupForm/></div>
+      <SignupForm/>
+
   )
 }
 export default Page
