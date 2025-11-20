@@ -11,6 +11,7 @@ const Page = () => {
 
   const {data} = useQuery(trpc.getWorkflows.queryOptions())
 
+  console.log("Testing creating new branch")
 
   const create = useMutation(trpc.createWorkflow.mutationOptions({
     onSuccess: async (data: any) => {
