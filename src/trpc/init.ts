@@ -43,7 +43,9 @@ export const premiumProcedure = protectedProcedure.use(async ({ctx, next}) => {
     externalId: ctx.auth.user.id
   })
   if (!customer.activeSubscriptions || customer.activeSubscriptions.length === 0) {
-    throw new TRPCError({code: "UNAUTHORIZED", message: "Unauthorize"})
+    throw new TRPCError({
+      code: "FORBIDDEN", message: "Active subscription required"
+    })
   }
   return next({ctx: {...ctx, customer}})
 })

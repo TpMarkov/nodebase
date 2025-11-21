@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="remove console.log">
-      <change afterPath="$PROJECT_DIR$/src/features/subscriptions/hooks/use-subscription.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/polar.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/entity-components.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/upgrade-dialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/workflows/components/workflows.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/workflows/server/prefetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/use-modal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app-sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth-client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/workflows/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/workflows/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/trpc/init.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/init.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trpc/routers/_app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/routers/_app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trpc/server.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/server.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "11-polar",
+    "git-widget-placeholder": "11-workflows-view-actions",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/app/(dashboard)/(rest)/executions",
     "node.js.detected.package.eslint": "true",
@@ -115,6 +122,7 @@
       <workItem from="1763614350015" duration="4469000" />
       <workItem from="1763619947897" duration="4986000" />
       <workItem from="1763628391306" duration="2202000" />
+      <workItem from="1763705033412" duration="11036000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
