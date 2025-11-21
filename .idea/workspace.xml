@@ -5,22 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="remove console.log">
-      <change afterPath="$PROJECT_DIR$/src/components/entity-components.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/upgrade-dialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/workflows/components/workflows.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/workflows/server/prefetch.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows-params.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/workflows/params.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/workflows/server/params-loader.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/use-entity-search.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/workflows/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/workflows/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trpc/init.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/init.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trpc/routers/_app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/routers/_app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trpc/server.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/server.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/entity-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/entity-components.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/upgrade-dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/upgrade-dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/workflows/components/workflows.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/components/workflows.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +46,9 @@
     &quot;accountId&quot;: &quot;6342219e-31aa-4c16-9476-8f4fa14df2f9&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -65,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "11-workflows-view-actions",
+    "git-widget-placeholder": "12-search-pagination",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/app/(dashboard)/(rest)/executions",
     "node.js.detected.package.eslint": "true",
@@ -181,6 +183,7 @@
     <MESSAGE value="add some changes" />
     <MESSAGE value="remove console.log" />
     <MESSAGE value="saentry" />
-    <option name="LAST_COMMIT_MESSAGE" value="saentry" />
+    <MESSAGE value="11-workflows-actions-view" />
+    <option name="LAST_COMMIT_MESSAGE" value="11-workflows-actions-view" />
   </component>
 </project>
