@@ -13,10 +13,10 @@ interface PageProps {
 }
 
 const Page = async ({params}: PageProps) => {
+  requireAuth()
   const {workflowId} = await params
   prefetchWorkflow(workflowId)
 
-  requireAuth()
   return (
       <HydrateClient>
         <ErrorBoundary fallback={<EditorError/>}>
