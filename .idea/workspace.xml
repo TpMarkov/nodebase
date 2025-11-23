@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="remove console.log">
-      <change afterPath="$PROJECT_DIR$/src/components/node-selector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/executions/components/base-execution-node.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/node.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/base-trigger-node.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/node.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/initial-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/initial-node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/workflow-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workflow-node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/node-components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/node-components.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/editor/components/add-node-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/editor/components/add-node-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/node-selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/node-selector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/react-flow/placeholder-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/react-flow/placeholder-node.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="13-workflows-view+delete" />
+        <entry key="$PROJECT_DIR$" value="16-node-types" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "16-node-types",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/triggers/components",
     "node.js.detected.package.eslint": "true",

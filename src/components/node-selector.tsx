@@ -31,7 +31,7 @@ const triggerNodes: NodeTypeOption[] = [
   {
     type: NodeType.MANUAL_TRIGGER,
     label: "Trigger manually",
-    description: "Runs the flow on clicking a button. Good for getting started quckly",
+    description: "Runs the flow on clicking a button. Good for getting started quickly",
     icon: MousePointerIcon
   },
 ]

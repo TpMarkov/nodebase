@@ -18,7 +18,7 @@ export function PlaceholderNode({children, onClick}: PlaceholderNodeProps) {
 
   return (
       <BaseNode
-          className="bg-card w-auto h-auto cursor-pointerborder-gray-400 p-4 text-center text-gray-400 shadow-none hover:border-gray-500 hover:bg-gray-50"
+          className="bg-card w-auto h-auto cursor-pointer border-gray-400 p-4 text-center text-gray-400 shadow-none hover:border-gray-500 hover:bg-gray-50"
           onClick={onClick}
       >
         {children}
