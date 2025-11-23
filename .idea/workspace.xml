@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="remove console.log">
-      <change afterPath="$PROJECT_DIR$/src/features/editor/components/editor-header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/initial-node.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/workflow-node.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/node-components.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/editor/components/add-node-button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(editor)/workflows/[workflowId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(editor)/workflows/[workflowId]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/components/workflows.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/components/workflows.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/server/prefetch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/server/prefetch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +42,9 @@
     &quot;accountId&quot;: &quot;6342219e-31aa-4c16-9476-8f4fa14df2f9&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/@xyflow/react/dist/esm/types/nodes.d.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -80,6 +85,9 @@
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\(dashboard)\(rest)" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\auth\componnets" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\(auth)" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\components\react-flow" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
