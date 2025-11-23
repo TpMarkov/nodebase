@@ -17,7 +17,14 @@ interface WorkflowNodeProps {
   description?: string
 }
 
-export function WorkflowNode({description, onDelete, onSettings, showToolbar, name, children}: WorkflowNodeProps) {
+export function WorkflowNode({
+                               description,
+                               onDelete,
+                               onSettings,
+                               showToolbar = true,
+                               name,
+                               children
+                             }: WorkflowNodeProps) {
 
   return (
       <>
