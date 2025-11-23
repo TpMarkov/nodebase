@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="remove console.log">
-      <change afterPath="$PROJECT_DIR$/src/components/initial-node.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/workflow-node.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/node-components.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/editor/components/add-node-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/node-selector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/executions/components/base-execution-node.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/node.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/base-trigger-node.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/node.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(editor)/workflows/[workflowId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(editor)/workflows/[workflowId]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/initial-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/initial-node.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workflow-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workflow-node.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/node-components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/node-components.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/editor/components/add-node-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/editor/components/add-node-button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,33 +63,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Portfolio PROJECTS/nodebase/src/app/(dashboard)/(rest)/executions&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "16-node-types",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/triggers/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "ts.external.directory.path": "D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\triggers\components" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\(dashboard)\(rest)\executions" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\(dashboard)\(rest)" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\auth\componnets" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\(auth)" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components" />
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components\http-request" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\components\react-flow" />
     </key>
   </component>
