@@ -4,11 +4,11 @@ import {cn} from "@/lib/utils";
 import {NodeStatus} from "@/components/react-flow/node-status-indicator";
 import {CheckCircleIcon, Loader2Icon, XCircleIcon, XIcon} from "lucide-react";
 
-interface BaseNodesProps extends ComponentProps {
+interface BaseNodesProps extends ComponentProps<"div"> {
   status?: NodeStatus
 }
 
-export function BaseNode({className, status, ...props}: BaseNodesProps<"div">) {
+export function BaseNode({className, status, ...props}: BaseNodesProps) {
   return (
       <div
           className={cn(

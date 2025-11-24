@@ -7,7 +7,7 @@ import type {LucideIcon} from "lucide-react";
 
 import Image from "next/image"
 
-import {BaseNode, BaseNodeContent, BaseNodeHeaderTitle} from "@/components/react-flow/base-node";
+import {BaseNode, BaseNodeContent} from "@/components/react-flow/base-node";
 
 import {BaseHandle} from "@/components/react-flow/base-handle";
 
@@ -42,13 +42,11 @@ export const BaseExecutionNode = memo(({
       // Add delete method
       const handleDelete = () => {
         setNodes((currentNodes) => {
-          const updatedNodes = currentNodes.filter((node) => node.id !== id)
-          return updatedNodes
+          return currentNodes.filter((node) => node.id !== id)
         })
 
         setEdges((currentEdges) => {
-          const updatedEdges = currentEdges.filter((edge) => edge.source !== id && edge.target !== id)
-          return updatedEdges
+          return currentEdges.filter((edge) => edge.source !== id && edge.target !== id)
         })
       }
       return (
