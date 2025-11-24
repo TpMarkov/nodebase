@@ -7,6 +7,8 @@ import {GlobeIcon} from "lucide-react";
 import {memo, useState} from "react";
 
 import {BaseExecutionNode} from "@/features/executions/components/base-execution-node";
+import {FormType, HttpRequestDialog} from "@/features/executions/components/http-request/dialog";
+import {z} from "zod"
 
 type HttpRequestNodeData = {
   endpoint?: string
@@ -18,20 +20,51 @@ type HttpRequestNodeData = {
 type HttpRequestNodeType = Node<HttpRequestNodeData>
 
 export const HttpRequestNode = memo((props: NodeProps<HttpRequestNodeType>) => {
-  const nodeData = props.data as HttpRequestNodeData
-  const description = nodeData?.endpoint ? `${nodeData.method || "GET"}: ${nodeData.endpoint}` : "Not Configured"
+  const [dialogOpen, setDialogOpen] = useState(false)
+  const {setNodes} = useReactFlow()
+
+  const nodeStatus = "success"
+
+  const nodeData = props.data
+  const description = nodeData?.endpoint ? `${nodeData.method || "GET"}:\n ${nodeData.endpoint}` : "Not Configured"
+
+  const handleDialogOpen = () => {
+    setDialogOpen(true)
+  }
+
+  const handleSubmit = (values: FormType) => {
+
+    setNodes((nodes) => nodes.map((node) => {
+      if (node.id === props.id) {
+        return {
+          ...node, data: {
+            ...node.data,
+            endpoint: values.endpoint,
+            method: values.method,
+            body: values.body
+          }
+        }
+      }
+      return node
+    }))
+  }
 
   return (
       <>
+        <HttpRequestDialog open={dialogOpen} onOpenChange={setDialogOpen}
+                           onSubmit={handleSubmit}
+                           defaultMethod={nodeData.method}
+                           defaultEndpoint={nodeData.endpoint}
+                           defaultBody={nodeData.body}
+        />
         <BaseExecutionNode
             {...props}
             id={props.id}
             icon={GlobeIcon}
             name={"HTTP Request"}
-            onDoubleClick={() => {
-            }}
-            onSettings={() => {
-            }}
+            status={nodeStatus}
+            onDoubleClick={handleDialogOpen}
+            onSettings={handleDialogOpen}
             description={description}
         />
       </>

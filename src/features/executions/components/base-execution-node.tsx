@@ -1,7 +1,7 @@
 "use client"
 import React, {memo} from 'react'
 
-import {type NodeProps, Position} from "@xyflow/react"
+import {type NodeProps, Position, useReactFlow} from "@xyflow/react"
 
 import type {LucideIcon} from "lucide-react";
 
@@ -12,13 +12,15 @@ import {BaseNode, BaseNodeContent, BaseNodeHeaderTitle} from "@/components/react
 import {BaseHandle} from "@/components/react-flow/base-handle";
 
 import {WorkflowNode} from "@/components/workflow-node";
+import {NodeStatusIndicator} from "@/components/react-flow/node-status-indicator";
 
 interface BaseExecutionNodeProps extends NodeProps {
   icon: LucideIcon | string
   name: string
   description?: string
   children?: React.ReactNode
-  // status?: NodeStatus
+  id: string
+  status?: NodeStatus
   onSettings?: () => void
   onDoubleClick?: () => void
 }
@@ -26,7 +28,9 @@ interface BaseExecutionNodeProps extends NodeProps {
 export const BaseExecutionNode = memo(({
                                          children,
                                          icon: Icon,
+                                         id,
                                          onDoubleClick,
+                                         status = "initial",
                                          onSettings,
                                          name,
                                          description
@@ -34,29 +38,47 @@ export const BaseExecutionNode = memo(({
                                        BaseExecutionNodeProps
     ) => {
       // Add delete method
+      const {setEdges, setNodes} = useReactFlow()
+      // Add delete method
       const handleDelete = () => {
+        setNodes((currentNodes) => {
+          const updatedNodes = currentNodes.filter((node) => node.id !== id)
+          return updatedNodes
+        })
+
+        setEdges((currentEdges) => {
+          const updatedEdges = currentEdges.filter((edge) => edge.source && edge.target !== id)
+          return updatedEdges
+        })
       }
       return (
           // Wrap this within a NodeStatus indicator
-          <WorkflowNode name={name}
-                        onSettings={onSettings}
-                        description={description}
-                        onDelete={handleDelete}
+          <NodeStatusIndicator
+              variant={"border"}
+              status={status}
           >
-            <BaseNode onDoubleClick={onDoubleClick}>
-              <BaseNodeContent>
-                {typeof Icon === "string" ? (<Image src={Icon}
-                                                    alt={name}
-                                                    width={16}
-                                                    height={16}/>) : (
-                    <Icon className={"size-4 text-muted-foreground"}/>)}
-                {children}
-                <BaseHandle id={"target-1"} type={"target"} position={Position.Left}/>
-                <BaseHandle id={"source-1"} type={"source"} position={Position.Right}/>
+            <WorkflowNode name={name}
+                          onSettings={onSettings}
+                          description={description}
+                          onDelete={handleDelete}
+            >
+              <BaseNode onDoubleClick={onDoubleClick}
+                        status={status}
+              >
+                <BaseNodeContent>
+                  {typeof Icon === "string" ? (<Image src={Icon}
+                                                      alt={name}
+                                                      width={16}
+                                                      height={16}/>) : (
+                      <Icon className={"size-4 text-muted-foreground"}/>)}
+                  {children}
+                  <BaseHandle id={"target-1"} type={"target"} position={Position.Left}/>
+                  <BaseHandle id={"source-1"} type={"source"} position={Position.Right}/>
 
-              </BaseNodeContent>
-            </BaseNode>
-          </WorkflowNode>
+                </BaseNodeContent>
+              </BaseNode>
+            </WorkflowNode>
+          </NodeStatusIndicator>
       )
     }
 )
