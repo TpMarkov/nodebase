@@ -211,3 +211,23 @@
 .react-flow__node.selected #base-node {
     @apply ring-3 ring-muted-foreground/25 shadow-lg;
 }
+
+/* Success toast */
+[data-toast][data-type="success"] {
+    background: #ECFDF5 !important;
+    color: #065F46 !important;
+    border-left: 6px solid #22C55E !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-weight: 500 !important;
+}
+
+/* Error toast */
+[data-toast][data-type="error"] {
+    background: #FEF2F2 !important;
+    color: #991B1B !important;
+    border-left: 6px solid #EF4444 !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-weight: 500 !important;
+}

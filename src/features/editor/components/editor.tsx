@@ -16,6 +16,8 @@ import {
 import '@xyflow/react/dist/style.css';
 import {nodeComponents} from "@/config/node-components";
 import {AddNodeButton} from "@/features/editor/components/add-node-button";
+import {useAtom} from "jotai";
+import {editorAtom} from "@/features/editor/store/atoms";
 
 export const EditorLoading = () => {
   return (
@@ -46,8 +48,9 @@ export const Editor = ({workflowId}: { workflowId: string }) => {
 
   const {data: workflow} = useSuspenseWorkflow(workflowId)
 
-  const [nodes, setNodes] = useState<Node[]>(workflow.nodes);
+  const [_, setEditor] = useAtom(editorAtom)
   const [edges, setEdges] = useState<Edge[]>(workflow.edges);
+  const [nodes, setNodes] = useState<Node[]>(workflow.nodes);
 
   const onNodesChange = useCallback(
       (changes: NodeChange[]) => setNodes((nodesSnapshot) => applyNodeChanges(changes, nodesSnapshot)),
@@ -69,11 +72,23 @@ export const Editor = ({workflowId}: { workflowId: string }) => {
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}
+            onInit={setEditor}
+
             fitView
             nodeTypes={nodeComponents}
             proOptions={{
               hideAttribution: true
             }}
+
+            /**
+            * Add this settings so you can select and delete more than 1 node at a time
+            */
+
+            // snapGrid={[10, 10]}
+            // snapToGrid
+            // panOnScroll
+            // panOnDrag={false}
+            // selectionOnDrag
         >
           <Background/>
           <Controls/>

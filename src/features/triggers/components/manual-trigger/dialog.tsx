@@ -1,0 +1,35 @@
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay, DialogPortal, DialogTitle, DialogTrigger
+} from "@/components/ui/dialog"
+
+interface Props {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+export const ManualTriggerDialog = ({open, onOpenChange}: Props) => {
+
+  return (
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>
+              Manual Trigger
+            </DialogTitle>
+            <DialogDescription>
+              Config settings for the manual trigger node.
+            </DialogDescription>
+          </DialogHeader>
+          <div className={"py-4"}>
+            <p className={"text-sm text-muted-foreground"}>Use to manually execute workflow, no configuration available.</p>
+          </div>
+        </DialogContent>
+      </Dialog>
+  )
+}

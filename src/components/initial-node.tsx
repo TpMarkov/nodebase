@@ -7,14 +7,15 @@ import {WorkflowNode} from "@/components/workflow-node";
 import {NodeSelector} from "@/components/node-selector";
 
 export const InitialNode = memo((props: NodeProps) => {
-  const [open, setOpen] = useState(false);
+  const [selectorOpen, setSelectorOpen] = useState(false);
+
   return (
-      <NodeSelector open={open} onOpenChange={setOpen}>
+      <NodeSelector open={selectorOpen} onOpenChange={setSelectorOpen}>
         <WorkflowNode showToolbar name={"Initial-Node"}
                       description={"Click to edit or run this workflow"}
         >
           <PlaceholderNode {...props} onClick={() => {
-            setOpen(true);
+            setSelectorOpen(true);
           }}>
             <div className={"cursor-pointer flex items-center justify-center"}>
               <PlusIcon className={"size-4"}/>
