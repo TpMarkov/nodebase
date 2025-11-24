@@ -12,7 +12,7 @@ import {BaseNode, BaseNodeContent, BaseNodeHeaderTitle} from "@/components/react
 import {BaseHandle} from "@/components/react-flow/base-handle";
 
 import {WorkflowNode} from "@/components/workflow-node";
-import {NodeStatusIndicator} from "@/components/react-flow/node-status-indicator";
+import {NodeStatus, NodeStatusIndicator} from "@/components/react-flow/node-status-indicator";
 
 interface BaseExecutionNodeProps extends NodeProps {
   icon: LucideIcon | string
@@ -47,7 +47,7 @@ export const BaseExecutionNode = memo(({
         })
 
         setEdges((currentEdges) => {
-          const updatedEdges = currentEdges.filter((edge) => edge.source && edge.target !== id)
+          const updatedEdges = currentEdges.filter((edge) => edge.source !== id && edge.target !== id)
           return updatedEdges
         })
       }
