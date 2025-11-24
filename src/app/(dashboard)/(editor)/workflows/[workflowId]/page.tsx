@@ -21,9 +21,13 @@ const Page = async ({params}: PageProps) => {
       <HydrateClient>
         <ErrorBoundary fallback={<EditorError/>}>
           <Suspense fallback={<EditorLoading/>}>
-            <main className={"flex-1"}>
+            <main className="flex flex-col h-screen overflow-hidden">
               <EditorHeader workflowId={workflowId}/>
-              <Editor workflowId={workflowId}/>
+
+              {/* Editor takes the remaining space ONLY */}
+              <div className="flex-1 h-[calc(100vh-56px)] overflow-hidden">
+                <Editor workflowId={workflowId}/>
+              </div>
             </main>
           </Suspense>
         </ErrorBoundary>

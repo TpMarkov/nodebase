@@ -3,7 +3,7 @@ import React from 'react'
 import {useSuspenseWorkflow, useUpdateWorkflowName} from "@/features/workflows/hooks/use-workflows";
 import {ErrorView, LoadingView} from "@/components/entity-components";
 import {BreadcrumbItem} from "@/components/ui/breadcrumb";
-import {useState, useCallback} from "react";
+import {useState, useCallback, useMemo} from "react";
 import {
   type Node,
   applyNodeChanges,
@@ -18,6 +18,9 @@ import {nodeComponents} from "@/config/node-components";
 import {AddNodeButton} from "@/features/editor/components/add-node-button";
 import {useAtom} from "jotai";
 import {editorAtom} from "@/features/editor/store/atoms";
+import {NodeType} from "@/generated/prisma/enums";
+import {ExecuteWorkflowButton} from "@/features/editor/components/exute-workflow-button";
+
 
 export const EditorLoading = () => {
   return (
@@ -52,6 +55,10 @@ export const Editor = ({workflowId}: { workflowId: string }) => {
   const [edges, setEdges] = useState<Edge[]>(workflow.edges);
   const [nodes, setNodes] = useState<Node[]>(workflow.nodes);
 
+  const hasManualTrigger = useMemo(() => {
+    return nodes.some((node) => node.type === NodeType.MANUAL_TRIGGER)
+  }, [nodes])
+
   const onNodesChange = useCallback(
       (changes: NodeChange[]) => setNodes((nodesSnapshot) => applyNodeChanges(changes, nodesSnapshot)),
       [],
@@ -85,7 +92,7 @@ export const Editor = ({workflowId}: { workflowId: string }) => {
             */
 
             // snapGrid={[10, 10]}
-            // snapToGrid
+            snapToGrid
             // panOnScroll
             // panOnDrag={false}
             // selectionOnDrag
@@ -96,6 +103,11 @@ export const Editor = ({workflowId}: { workflowId: string }) => {
           <Panel position={"top-right"}>
             <AddNodeButton/>
           </Panel>
+          {hasManualTrigger && (
+              <Panel position={"bottom-center"}>
+                <ExecuteWorkflowButton workflowId={workflowId}/>
+              </Panel>
+          )}
         </ReactFlow>
       </div>
   )

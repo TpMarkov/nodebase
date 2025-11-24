@@ -7,7 +7,7 @@ import {GlobeIcon} from "lucide-react";
 import {memo, useState} from "react";
 
 import {BaseExecutionNode} from "@/features/executions/components/base-execution-node";
-import {FormType, HttpRequestDialog} from "@/features/executions/components/http-request/dialog";
+import {HttpRequestFormValues, HttpRequestDialog} from "@/features/executions/components/http-request/dialog";
 import {z} from "zod"
 
 type HttpRequestNodeData = {
@@ -32,7 +32,7 @@ export const HttpRequestNode = memo((props: NodeProps<HttpRequestNodeType>) => {
     setDialogOpen(true)
   }
 
-  const handleSubmit = (values: FormType) => {
+  const handleSubmit = (values: HttpRequestFormValues) => {
 
     setNodes((nodes) => nodes.map((node) => {
       if (node.id === props.id) {
@@ -53,9 +53,7 @@ export const HttpRequestNode = memo((props: NodeProps<HttpRequestNodeType>) => {
       <>
         <HttpRequestDialog open={dialogOpen} onOpenChange={setDialogOpen}
                            onSubmit={handleSubmit}
-                           defaultMethod={nodeData.method}
-                           defaultEndpoint={nodeData.endpoint}
-                           defaultBody={nodeData.body}
+                           defaultValues={nodeData}
         />
         <BaseExecutionNode
             {...props}

@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add small fixes to 16-node-types">
-      <change afterPath="$PROJECT_DIR$/src/features/editor/store/atoms.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/dialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/dialog.tsx" afterDir="false" />
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add fix to generic types base-node.tsx">
+      <change afterPath="$PROJECT_DIR$/src/features/editor/components/exute-workflow-button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(editor)/workflows/[workflowId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(editor)/workflows/[workflowId]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/entity-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/entity-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/initial-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/initial-node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/react-flow/base-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/react-flow/base-node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/sonner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/sonner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/editor/components/editor-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/editor/components/editor-header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/base-execution-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/base-execution-node.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/dialog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/base-trigger-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/base-trigger-node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="16-node-types" />
+        <entry key="$PROJECT_DIR$" value="17-nodes-status" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,7 +42,7 @@
     <setting file="file://$PROJECT_DIR$/node_modules/@xyflow/react/dist/esm/types/nodes.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -69,25 +56,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Portfolio PROJECTS/nodebase/src/features/executions/components/http-request&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/executions/components/http-request",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components\http-request" />
@@ -190,7 +177,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763916915279</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add small fixes with imports and on deleting node to cascate all the existing connections">
+      <option name="closed" value="true" />
+      <created>1763987373653</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763987373653</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add fix to generic types base-node.tsx">
+      <option name="closed" value="true" />
+      <created>1763988554861</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763988554861</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +229,9 @@
     <MESSAGE value="11-workflows-actions-view" />
     <MESSAGE value="13-workflows-view+remove" />
     <MESSAGE value="add small fixes to 16-node-types" />
-    <option name="LAST_COMMIT_MESSAGE" value="add small fixes to 16-node-types" />
+    <MESSAGE value="add small fixes with imports and on deleting node to cascate all the existing connections" />
+    <MESSAGE value="add fix to generic types base-node.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fix to generic types base-node.tsx" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
