@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add fix to generic types base-node.tsx">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add fixes to : 18-execute-httpRequest">
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/dialog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inngest/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/node.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763988554861</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add fixes to : 18-execute-httpRequest">
+      <option name="closed" value="true" />
+      <created>1764062762891</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764062762891</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +238,8 @@
     <MESSAGE value="add small fixes with imports and on deleting node to cascate all the existing connections" />
     <MESSAGE value="add fix to generic types base-node.tsx" />
     <MESSAGE value="18-execute-httpRequest" />
-    <option name="LAST_COMMIT_MESSAGE" value="18-execute-httpRequest" />
+    <MESSAGE value="add fixes to : 18-execute-httpRequest" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fixes to : 18-execute-httpRequest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

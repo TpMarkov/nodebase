@@ -11,6 +11,7 @@ import {HttpRequestFormValues, HttpRequestDialog} from "@/features/executions/co
 import {z} from "zod"
 
 type HttpRequestNodeData = {
+  variableName?: string
   endpoint?: string
   method?: "GET" | "POST" | "PUT" | "DELETE" | "PATCH"
   body?: string
@@ -39,9 +40,7 @@ export const HttpRequestNode = memo((props: NodeProps<HttpRequestNodeType>) => {
         return {
           ...node, data: {
             ...node.data,
-            endpoint: values.endpoint,
-            method: values.method,
-            body: values.body
+            ...values
           }
         }
       }
