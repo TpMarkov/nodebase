@@ -8,7 +8,6 @@ import {memo, useState} from "react";
 
 import {BaseExecutionNode} from "@/features/executions/components/base-execution-node";
 import {HttpRequestFormValues, HttpRequestDialog} from "@/features/executions/components/http-request/dialog";
-import {z} from "zod"
 
 type HttpRequestNodeData = {
   variableName?: string
