@@ -25,7 +25,7 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
 
     const options: Options = {method}
 
-    if (["POST", "PUT", "PATH"].includes(method)) {
+    if (["POST", "PUT", "PATCH"].includes(method)) {
       options.body = data.body || "{}"
     }
 

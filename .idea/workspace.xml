@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add fix to generic types base-node.tsx">
-      <change afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/executions/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/executor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inngest/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/inngest/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/inngest/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/editor/components/exute-workflow-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/editor/components/exute-workflow-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/hooks/use-workflows.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inngest/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/functions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inngest/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="17-nodes-status" />
+        <entry key="$PROJECT_DIR$" value="18-execute-httpRequest" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -240,7 +230,8 @@
     <MESSAGE value="add small fixes to 16-node-types" />
     <MESSAGE value="add small fixes with imports and on deleting node to cascate all the existing connections" />
     <MESSAGE value="add fix to generic types base-node.tsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fix to generic types base-node.tsx" />
+    <MESSAGE value="18-execute-httpRequest" />
+    <option name="LAST_COMMIT_MESSAGE" value="18-execute-httpRequest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

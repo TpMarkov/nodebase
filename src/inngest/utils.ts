@@ -36,7 +36,7 @@ export const topologicalSort = (nodes: Node[], connections: Connection[]): Node[
     console.log(sortedNodeIds)
   } catch (e) {
     if (e instanceof Error && e.message.includes("Cyclic")) {
-      throw new Error(`Workflow contains a cycle error: ${e}`)
+      throw new NonRetriableError(`Workflow contains a cycle: ${e.message}`)
     }
     throw e
   }
