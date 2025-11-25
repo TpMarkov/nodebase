@@ -108,6 +108,12 @@ export const Editor = ({workflowId}: { workflowId: string }) => {
                 <ExecuteWorkflowButton workflowId={workflowId}/>
               </Panel>
           )}
+          <Panel position={"top-center"}>
+            <p className={"text-sm text-muted-foreground bg-white"}>Remember to always <span
+                className={"uppercase font-semibold text-md text-primary"}>save</span>{" "}
+              your changes before executing.
+            </p>
+          </Panel>
         </ReactFlow>
       </div>
   )
