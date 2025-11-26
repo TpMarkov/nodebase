@@ -1,8 +1,8 @@
-import type {NodeExecutor, WorkflowContext} from "@/features/executions/types";
-import {NonRetriableError} from "inngest";
-import ky, {type Options} from "ky"
+import type { NodeExecutor, WorkflowContext } from "@/features/executions/types";
+import { NonRetriableError } from "inngest";
+import ky, { type Options } from "ky"
 import Handlebars from "handlebars"
-import {httpRequestChannel} from "@/inngest/channels/http-request";
+import { httpRequestChannel } from "@/inngest/channels/http-request";
 
 interface HttpRequestData {
   variableName: string
@@ -19,9 +19,9 @@ Handlebars.registerHelper("json", (context) => {
 })
 
 export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
-                                                                           data, nodeId, step, context,
-                                                                           publish
-                                                                         }) => {
+  data, nodeId, step, context,
+  publish
+}) => {
 
   console.log('[httpRequestExecutor] Publishing loading status for node:', nodeId)
   await publish(httpRequestChannel().status({
@@ -58,38 +58,53 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
   try {
 
     const result = await step.run("execute-request", async () => {
-      const method = data.method
+      try {
+        const method = data.method
 
-      // Compiles the result from the request so that it can be used on to the next request
-      const endpoint = Handlebars.compile(data.endpoint)(context)
+        // Compiles the result from the request so that it can be used on to the next request
+        const endpoint = Handlebars.compile(data.endpoint)(context)
 
-      const options: Options = {method}
+        const options: Options = { method }
 
-      if (["POST", "PUT", "PATCH"].includes(method)) {
-        const resolved = Handlebars.compile(data.body || "{}")(context)
-        JSON.parse(resolved)
+        if (["POST", "PUT", "PATCH"].includes(method)) {
+          const resolved = Handlebars.compile(data.body || "{}")(context)
+          JSON.parse(resolved)
 
-        options.body = resolved
-        options.headers = {
-          "Content-Type": "application/json"
+          options.body = resolved
+          options.headers = {
+            "Content-Type": "application/json"
+          }
         }
-      }
 
-      const response = await ky(endpoint, options)
-      const contentType = response.headers.get("content-type")
-      const responseData = contentType?.includes("application/json") ? await response.json() : await response.text()
+        const response = await ky(endpoint, options)
+        const contentType = response.headers.get("content-type")
+        const responseData = contentType?.includes("application/json") ? await response.json() : await response.text()
 
-      const responsePayload = {
-        httpResponse: {
-          status: response.status,
-          statusText: response.statusText,
-          data: responseData
+        const responsePayload = {
+          httpResponse: {
+            status: response.status,
+            statusText: response.statusText,
+            data: responseData
+          }
         }
-      }
 
-      return {
-        ...context,
-        [data.variableName]: responsePayload,
+        return {
+          ...context,
+          [data.variableName]: responsePayload,
+        }
+      } catch (error) {
+        // Publish error status immediately when the request fails
+        console.log('[httpRequestExecutor] Publishing error status for node:', nodeId, error)
+        await publish(httpRequestChannel().status({
+          nodeId,
+          status: "error"
+        }))
+        console.log('[httpRequestExecutor] Error status published for node:', nodeId)
+
+        // Re-throw as NonRetriableError to prevent Inngest from retrying
+        throw new NonRetriableError(
+          error instanceof Error ? error.message : "HTTP request failed"
+        )
       }
     })
 
@@ -104,10 +119,9 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
 
     return result
   } catch (error) {
-    await publish(httpRequestChannel().status({
-      nodeId,
-      status: "error"
-    }))
+    // This catch block handles errors that occur outside step.run()
+    // Errors inside step.run() are already handled above
+    console.log('[httpRequestExecutor] Outer catch - error already published for node:', nodeId)
     throw error
   }
 }

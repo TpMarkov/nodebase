@@ -13,6 +13,7 @@ import {BaseHandle} from "@/components/react-flow/base-handle";
 
 import {WorkflowNode} from "@/components/workflow-node";
 import {NodeStatus, NodeStatusIndicator} from "@/components/react-flow/node-status-indicator";
+import {cn} from "@/lib/utils";
 
 interface BaseExecutionNodeProps extends NodeProps {
   icon: LucideIcon | string
@@ -62,6 +63,7 @@ export const BaseExecutionNode = memo(({
             >
               <BaseNode onDoubleClick={onDoubleClick}
                         status={status}
+                        className={cn("", status === "error" && "bg-red-400/10")}
               >
                 <BaseNodeContent>
                   {typeof Icon === "string" ? (<Image src={Icon}
