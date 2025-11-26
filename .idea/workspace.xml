@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="20-http-request-live-status-not-working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/hooks/use-node-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/hooks/use-node-status.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "20-http-request-live-status-not-working",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/executions/components/http-request",
     "node.js.detected.package.eslint": "true",
@@ -138,6 +136,7 @@
       <workItem from="1764135146726" duration="5244000" />
       <workItem from="1764140656542" duration="7854000" />
       <workItem from="1764149503617" duration="4537000" />
+      <workItem from="1764167846259" duration="974000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />

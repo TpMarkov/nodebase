@@ -1,8 +1,8 @@
-import type { NodeExecutor, WorkflowContext } from "@/features/executions/types";
-import { NonRetriableError } from "inngest";
-import ky, { type Options } from "ky"
+import type {NodeExecutor, WorkflowContext} from "@/features/executions/types";
+import {NonRetriableError} from "inngest";
+import ky, {type Options} from "ky"
 import Handlebars from "handlebars"
-import { httpRequestChannel } from "@/inngest/channels/http-request";
+import {httpRequestChannel} from "@/inngest/channels/http-request";
 
 interface HttpRequestData {
   variableName: string
@@ -19,9 +19,9 @@ Handlebars.registerHelper("json", (context) => {
 })
 
 export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
-  data, nodeId, step, context,
-  publish
-}) => {
+                                                                           data, nodeId, step, context,
+                                                                           publish
+                                                                         }) => {
 
   console.log('[httpRequestExecutor] Publishing loading status for node:', nodeId)
   await publish(httpRequestChannel().status({
@@ -55,51 +55,59 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
     throw new NonRetriableError("Method is required.")
   }
 
+  try {
 
-  const result = await step.run("execute-request", async () => {
-    const method = data.method
+    const result = await step.run("execute-request", async () => {
+      const method = data.method
 
-    // Compiles the result from the request so that it can be used on to the next request
-    const endpoint = Handlebars.compile(data.endpoint)(context)
+      // Compiles the result from the request so that it can be used on to the next request
+      const endpoint = Handlebars.compile(data.endpoint)(context)
 
-    const options: Options = { method }
+      const options: Options = {method}
 
-    if (["POST", "PUT", "PATCH"].includes(method)) {
-      const resolved = Handlebars.compile(data.body || "{}")(context)
-      JSON.parse(resolved)
+      if (["POST", "PUT", "PATCH"].includes(method)) {
+        const resolved = Handlebars.compile(data.body || "{}")(context)
+        JSON.parse(resolved)
 
-      options.body = resolved
-      options.headers = {
-        "Content-Type": "application/json"
+        options.body = resolved
+        options.headers = {
+          "Content-Type": "application/json"
+        }
       }
-    }
 
-    const response = await ky(endpoint, options)
-    const contentType = response.headers.get("content-type")
-    const responseData = contentType?.includes("application/json") ? await response.json() : await response.text()
+      const response = await ky(endpoint, options)
+      const contentType = response.headers.get("content-type")
+      const responseData = contentType?.includes("application/json") ? await response.json() : await response.text()
 
-    const responsePayload = {
-      httpResponse: {
-        status: response.status,
-        statusText: response.statusText,
-        data: responseData
+      const responsePayload = {
+        httpResponse: {
+          status: response.status,
+          statusText: response.statusText,
+          data: responseData
+        }
       }
-    }
 
-    return {
-      ...context,
-      [data.variableName]: responsePayload,
-    }
-  })
+      return {
+        ...context,
+        [data.variableName]: responsePayload,
+      }
+    })
 
 
-  // TODO: Publish "success" state for manual trigger
-  console.log('[httpRequestExecutor] Publishing success status for node:', nodeId)
-  await publish(httpRequestChannel().status({
-    nodeId,
-    status: "success"
-  }))
-  console.log('[httpRequestExecutor] Success status published for node:', nodeId)
+    // TODO: Publish "success" state for manual trigger
+    console.log('[httpRequestExecutor] Publishing success status for node:', nodeId)
+    await publish(httpRequestChannel().status({
+      nodeId,
+      status: "success"
+    }))
+    console.log('[httpRequestExecutor] Success status published for node:', nodeId)
 
-  return result
+    return result
+  } catch (error) {
+    await publish(httpRequestChannel().status({
+      nodeId,
+      status: "error"
+    }))
+    throw error
+  }
 }
