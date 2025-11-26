@@ -1,10 +1,10 @@
-import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {TRPCReactProvider} from "@/trpc/client";
-import {Toaster} from "sonner";
-import {NuqsAdapter} from "nuqs/adapters/next";
-import {Provider} from "jotai"
+import { TRPCReactProvider } from "@/trpc/client";
+import { Toaster } from "sonner";
+import { NuqsAdapter } from "nuqs/adapters/next";
+import { Provider } from "jotai"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,25 +22,25 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                     children,
-                                   }: Readonly<{
+  children,
+}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
 
-      <html lang="en">
+    <html lang="en">
       <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased max-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased max-h-screen`}
       >
-      <TRPCReactProvider>
-        <NuqsAdapter>
-          <Provider>
-            {children}
-          </Provider>
-          <Toaster theme={"dark"}/>
-        </NuqsAdapter>
-      </TRPCReactProvider>
+        <TRPCReactProvider>
+          <NuqsAdapter>
+            <Provider>
+              {children}
+            </Provider>
+            <Toaster theme={"dark"} />
+          </NuqsAdapter>
+        </TRPCReactProvider>
       </body>
-      </html>
+    </html>
   )
 }

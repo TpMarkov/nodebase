@@ -1,16 +1,15 @@
 "use client"
 
-import {Node, NodeProps, useReactFlow} from "@xyflow/react";
+import { Node, NodeProps, useReactFlow } from "@xyflow/react";
 
-import {GlobeIcon} from "lucide-react";
+import { GlobeIcon } from "lucide-react";
 
-import {memo, useState} from "react";
+import { memo, useState } from "react";
 
-import {BaseExecutionNode} from "@/features/executions/components/base-execution-node";
-import {HttpRequestFormValues, HttpRequestDialog} from "@/features/executions/components/http-request/dialog";
-import {useNodeStatus} from "@/features/executions/hooks/use-node-status";
-import {fetchHttpRequestRealtimeToken} from "@/features/executions/components/http-request/actions";
-import {httpRequestChannel} from "@/inngest/channels/http-request";
+import { BaseExecutionNode } from "@/features/executions/components/base-execution-node";
+import { HttpRequestFormValues, HttpRequestDialog } from "@/features/executions/components/http-request/dialog";
+import { useNodeStatus } from "@/features/executions/hooks/use-node-status";
+import { httpRequestChannel } from "@/inngest/channels/http-request";
 
 type HttpRequestNodeData = {
   variableName?: string
@@ -24,17 +23,30 @@ type HttpRequestNodeType = Node<HttpRequestNodeData>
 
 export const HttpRequestNode = memo((props: NodeProps<HttpRequestNodeType>) => {
   const [dialogOpen, setDialogOpen] = useState(false)
-  const {setNodes} = useReactFlow()
+  const { setNodes } = useReactFlow()
 
   const nodeStatus = useNodeStatus({
     nodeId: props.id,
     channel: httpRequestChannel().name,
     topic: "status",
-    refreshToken: fetchHttpRequestRealtimeToken
+    refreshToken: async () => {
+      const response = await fetch('/api/realtime', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch realtime token')
+      }
+
+      return response.json()
+    }
   })
 
   const nodeData = props.data
-  const description = nodeData?.endpoint ? `${nodeData.method || "GET"}:\n ${nodeData.endpoint}` : "Not Configured"
+  const description = nodeData?.endpoint ? `${nodeData.method || "GET"}:\\n ${nodeData.endpoint}` : "Not Configured"
 
   const handleDialogOpen = () => {
     setDialogOpen(true)
@@ -56,22 +68,22 @@ export const HttpRequestNode = memo((props: NodeProps<HttpRequestNodeType>) => {
   }
 
   return (
-      <>
-        <HttpRequestDialog open={dialogOpen} onOpenChange={setDialogOpen}
-                           onSubmit={handleSubmit}
-                           defaultValues={nodeData}
-        />
-        <BaseExecutionNode
-            {...props}
-            id={props.id}
-            icon={GlobeIcon}
-            name={"HTTP Request"}
-            status={nodeStatus}
-            onDoubleClick={handleDialogOpen}
-            onSettings={handleDialogOpen}
-            description={description}
-        />
-      </>
+    <>
+      <HttpRequestDialog open={dialogOpen} onOpenChange={setDialogOpen}
+        onSubmit={handleSubmit}
+        defaultValues={nodeData}
+      />
+      <BaseExecutionNode
+        {...props}
+        id={props.id}
+        icon={GlobeIcon}
+        name={"HTTP Request"}
+        status={nodeStatus}
+        onDoubleClick={handleDialogOpen}
+        onSettings={handleDialogOpen}
+        description={description}
+      />
+    </>
   )
 })
 
