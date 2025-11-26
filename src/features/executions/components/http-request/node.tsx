@@ -8,6 +8,9 @@ import {memo, useState} from "react";
 
 import {BaseExecutionNode} from "@/features/executions/components/base-execution-node";
 import {HttpRequestFormValues, HttpRequestDialog} from "@/features/executions/components/http-request/dialog";
+import {useNodeStatus} from "@/features/executions/hooks/use-node-status";
+import {fetchHttpRequestRealtimeToken} from "@/features/executions/components/http-request/actions";
+import {httpRequestChannel} from "@/inngest/channels/http-request";
 
 type HttpRequestNodeData = {
   variableName?: string
@@ -23,7 +26,12 @@ export const HttpRequestNode = memo((props: NodeProps<HttpRequestNodeType>) => {
   const [dialogOpen, setDialogOpen] = useState(false)
   const {setNodes} = useReactFlow()
 
-  const nodeStatus = "success"
+  const nodeStatus = useNodeStatus({
+    nodeId: props.id,
+    channel: httpRequestChannel().name,
+    topic: "status",
+    refreshToken: fetchHttpRequestRealtimeToken
+  })
 
   const nodeData = props.data
   const description = nodeData?.endpoint ? `${nodeData.method || "GET"}:\n ${nodeData.endpoint}` : "Not Configured"

@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add fixes to : 18-execute-httpRequest">
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/node.tsx" afterDir="false" />
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="20-http-request-live-status-not-working">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/hooks/use-node-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/hooks/use-node-status.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="18-execute-httpRequest" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,25 +53,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Portfolio PROJECTS/nodebase/src/features/executions/components/http-request&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "20-http-request-live-status-not-working",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/executions/components/http-request",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components\http-request" />
@@ -134,6 +135,9 @@
       <workItem from="1763982765180" duration="3113000" />
       <workItem from="1764049117700" duration="1489000" />
       <workItem from="1764050695639" duration="9264000" />
+      <workItem from="1764135146726" duration="5244000" />
+      <workItem from="1764140656542" duration="7854000" />
+      <workItem from="1764149503617" duration="4537000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
@@ -199,7 +203,31 @@
       <option name="project" value="LOCAL" />
       <updated>1764062762891</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add fixes 2 to : 18-execute-httpRequest">
+      <option name="closed" value="true" />
+      <created>1764077539543</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764077539543</updated>
+    </task>
+    <task id="LOCAL-00010" summary="19-execute-http-with-dynamic-params">
+      <option name="closed" value="true" />
+      <created>1764080690295</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764080690295</updated>
+    </task>
+    <task id="LOCAL-00011" summary="20-http-request-live-status-not-working">
+      <option name="closed" value="true" />
+      <created>1764152595071</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1764152595071</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +267,10 @@
     <MESSAGE value="add fix to generic types base-node.tsx" />
     <MESSAGE value="18-execute-httpRequest" />
     <MESSAGE value="add fixes to : 18-execute-httpRequest" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fixes to : 18-execute-httpRequest" />
+    <MESSAGE value="add fixes 2 to : 18-execute-httpRequest" />
+    <MESSAGE value="19-execute-http-with-dynamic-params" />
+    <MESSAGE value="20-http-request-live-status-not-working" />
+    <option name="LAST_COMMIT_MESSAGE" value="20-http-request-live-status-not-working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

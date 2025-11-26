@@ -33,7 +33,6 @@ export const topologicalSort = (nodes: Node[], connections: Connection[]): Node[
     sortedNodeIds = toposort(edges)
     //  Remove duplicates (from self-edges)
     sortedNodeIds = [...new Set(sortedNodeIds)]
-    console.log(sortedNodeIds)
   } catch (e) {
     if (e instanceof Error && e.message.includes("Cyclic")) {
       throw new NonRetriableError(`Workflow contains a cycle: ${e.message}`)
