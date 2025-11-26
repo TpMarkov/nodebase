@@ -2,6 +2,7 @@ import type {NodeExecutor, WorkflowContext} from "@/features/executions/types";
 import {NonRetriableError} from "inngest";
 import ky, {type Options} from "ky"
 import Handlebars from "handlebars"
+import {httpRequestChannel} from "@/inngest/channels/http-request";
 
 interface HttpRequestData {
   variableName: string
@@ -18,19 +19,37 @@ Handlebars.registerHelper("json", (context) => {
 })
 
 export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
-                                                                           data, nodeId, step, context
+                                                                           data, nodeId, step, context,
+                                                                           publish
                                                                          }) => {
-  // TODO : Publish "loading" state for manual trigger
+
+  await publish(httpRequestChannel().status({
+    nodeId: nodeId,
+    status: "loading"
+  }))
+
 
   if (!data.endpoint) {
+    await publish(httpRequestChannel().status({
+      nodeId,
+      status: "error"
+    }))
     throw new NonRetriableError("Endpoint is required.")
   }
 
   if (!data.variableName) {
+    await publish(httpRequestChannel().status({
+      nodeId,
+      status: "error"
+    }))
     throw new NonRetriableError("Variable name is required.")
   }
 
   if (!data.method) {
+    await publish(httpRequestChannel().status({
+      nodeId,
+      status: "error"
+    }))
     throw new NonRetriableError("Method is required.")
   }
 
@@ -73,6 +92,10 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
 
 
 // TODO: Publish "success" state for manual trigger
+  await publish(httpRequestChannel().status({
+    nodeId,
+    status: "success"
+  }))
 
   return result
 }
