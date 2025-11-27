@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add try and catch at the executor.ts">
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/base-execution-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/base-execution-node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/google-form-trigger/dialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/google-form-trigger/executor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/google-form-trigger/node.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/triggers/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/inngest/channels/google-form-channel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/node-selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/node-selector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/node-components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/node-components.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inngest/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/functions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +66,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/executions/components/http-request",
+    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/triggers/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,11 +79,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components\http-request" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\triggers\components" />
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\features" />
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components\http-request" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\(dashboard)\(rest)\executions" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\(dashboard)\(rest)" />
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\auth\componnets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Portfolio PROJECTS\nodebase\src\components\react-flow" />
