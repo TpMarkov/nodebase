@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add additional changes to branch 20">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2025_11_41_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2025_11_41_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2025_9_13_AM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2025_9_13_AM__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2025_11_41_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2025_11_41_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/google-form-trigger/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/google-form-trigger/executor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/google-form-trigger/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/google-form-trigger/node.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/sign-up/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/sign-up/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/[credentialId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/[credentialId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/[executionId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/[executionId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/workflows/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/workflows/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/workflows/google-form/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/workflows/google-form/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inngest/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/functions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth-utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +68,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JavaScript Debug.127.0.0.1:4040.executor": "Debug",
+    "JavaScript Debug.127.0.0.1:8288.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -85,7 +101,13 @@
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components\http-request" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Next.js: server-side">
+  <component name="RunManager" selected="JavaScript Debug.127.0.0.1:8288">
+    <configuration name="127.0.0.1:4040" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://127.0.0.1:4040">
+      <method v="2" />
+    </configuration>
+    <configuration name="127.0.0.1:8288" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://127.0.0.1:8288">
+      <method v="2" />
+    </configuration>
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
@@ -99,6 +121,12 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
+        <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -138,6 +166,9 @@
       <workItem from="1764140656542" duration="7854000" />
       <workItem from="1764149503617" duration="4537000" />
       <workItem from="1764167846259" duration="2610000" />
+      <workItem from="1764236063933" duration="490000" />
+      <workItem from="1764236602629" duration="342000" />
+      <workItem from="1764237001448" duration="4141000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />

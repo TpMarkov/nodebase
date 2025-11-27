@@ -1,5 +1,5 @@
 import React from 'react'
-import {requireAuth} from "@/lib/auth-utils";
+import { requireAuth } from "@/lib/auth-utils";
 
 interface PageProps {
   params: Promise<{
@@ -7,11 +7,11 @@ interface PageProps {
   }>
 }
 
-const Page = async ({params}: PageProps) => {
-  const {executionId} = await params
-  requireAuth()
+const Page = async ({ params }: PageProps) => {
+  const { executionId } = await params
+  await requireAuth()
   return (
-      <div>Execution ID : {executionId}</div>
+    <div>Execution ID : {executionId}</div>
   )
 }
 export default Page

@@ -1,6 +1,7 @@
 import {type NextRequest, NextResponse} from "next/server"
 import {inngest} from "@/inngest/client";
 import {sendWorkflowExecution} from "@/inngest/utils";
+import {createServerParamsForMetadata} from "next/dist/server/request/params";
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,6 +28,9 @@ export async function POST(request: NextRequest) {
 
     await sendWorkflowExecution({
       workflowId,
+      initialData: {
+        googleForm: formData
+      }
     })
 
     //  Trigger an Inngest job

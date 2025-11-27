@@ -1,10 +1,10 @@
 import React from 'react'
-import {requireAuth} from "@/lib/auth-utils";
+import { requireAuth } from "@/lib/auth-utils";
 
 const Page = async () => {
-  requireAuth()
+  await requireAuth()
   return (
-      <div>Credentials page</div>
+    <div>Credentials page</div>
   )
 }
 export default Page

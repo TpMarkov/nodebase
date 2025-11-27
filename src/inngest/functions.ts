@@ -1,7 +1,4 @@
 import {inngest} from "./client";
-import {createGoogleGenerativeAI} from "@ai-sdk/google";
-import {generateText} from "ai"
-import {createOpenAI} from "@ai-sdk/openai";
 import {NonRetriableError} from "inngest";
 import prisma from "@/lib/db";
 import {topologicalSort} from "@/inngest/utils";
