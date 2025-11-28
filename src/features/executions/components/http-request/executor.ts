@@ -64,6 +64,13 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
         // Compiles the result from the request so that it can be used on to the next request
         const endpoint = Handlebars.compile(data.endpoint)(context)
 
+        // Validate URL
+        try {
+          new URL(endpoint)
+        } catch (e) {
+          throw new NonRetriableError(`Invalid URL: '${endpoint}'. Please ensure the endpoint is a valid URL.`)
+        }
+
         const options: Options = { method }
 
         if (["POST", "PUT", "PATCH"].includes(method)) {
