@@ -6,6 +6,7 @@ import {SettingsIcon, TrashIcon} from "lucide-react";
 import type {ReactNode} from "react";
 
 import {Button} from "@/components/ui/button"
+import {cn} from "@/lib/utils";
 
 
 interface WorkflowNodeProps {
@@ -51,7 +52,7 @@ export function WorkflowNode({
                          className={"max-w-[200px] text-center"}>
               <p className={"font-medium"}>{name}</p>
               {description && (
-                  <p className={"text-sm truncate text-muted-foreground font-semibold"}>{description}</p>
+                  <p className={cn("text-sm text-muted-foreground font-semibold", description.length > 30 && "truncate")}>{description}</p>
               )}
             </NodeToolbar>
         )}

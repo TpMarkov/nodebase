@@ -3,7 +3,6 @@ import {NodeProps} from "@xyflow/react";
 import {BaseTriggerNode} from "@/features/triggers/components/base-trigger-node";
 import {GoogleFormDialog} from "@/features/triggers/components/google-form-trigger/dialog";
 import {useNodeStatus} from "@/features/executions/hooks/use-node-status";
-import {googleFormChannel} from "@/inngest/channels/google-form-channel";
 
 export const GoogleFormTrigger = memo((props: NodeProps) => {
   const [dialogOpen, setDialogOpen] = useState(false)
@@ -45,6 +44,7 @@ export const GoogleFormTrigger = memo((props: NodeProps) => {
             name={"Google Form"}
             icon={"/logos/googleform.svg"}
             onSettings={handleOpenSettings}
+            description={"When form is submitted"}
             status={nodeStatus}
             onDoubleClick={handleOpenSettings}
         />

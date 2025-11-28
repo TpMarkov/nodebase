@@ -1,13 +1,13 @@
-import type { NodeExecutor, WorkflowContext } from "@/features/executions/types";
-import { NonRetriableError } from "inngest";
-import ky, { type Options } from "ky"
+import type {NodeExecutor, WorkflowContext} from "@/features/executions/types";
+import {NonRetriableError} from "inngest";
+import ky, {type Options} from "ky"
 import Handlebars from "handlebars"
-import { httpRequestChannel } from "@/inngest/channels/http-request";
+import {httpRequestChannel} from "@/inngest/channels/http-request";
 
 interface HttpRequestData {
-  variableName: string
-  endpoint: string
-  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE"
+  variableName?: string
+  endpoint?: string
+  method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE"
   body?: string
 }
 
@@ -19,9 +19,9 @@ Handlebars.registerHelper("json", (context) => {
 })
 
 export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
-  data, nodeId, step, context,
-  publish
-}) => {
+                                                                           data, nodeId, step, context,
+                                                                           publish
+                                                                         }) => {
 
   console.log('[httpRequestExecutor] Publishing loading status for node:', nodeId)
   await publish(httpRequestChannel().status({
@@ -31,34 +31,35 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
   console.log('[httpRequestExecutor] Loading status published for node:', nodeId)
 
 
-  if (!data.endpoint) {
-    await publish(httpRequestChannel().status({
-      nodeId,
-      status: "error"
-    }))
-    throw new NonRetriableError("Endpoint is required.")
-  }
-
-  if (!data.variableName) {
-    await publish(httpRequestChannel().status({
-      nodeId,
-      status: "error"
-    }))
-    throw new NonRetriableError("Variable name is required.")
-  }
-
-  if (!data.method) {
-    await publish(httpRequestChannel().status({
-      nodeId,
-      status: "error"
-    }))
-    throw new NonRetriableError("Method is required.")
-  }
-
   try {
 
     const result = await step.run("execute-request", async () => {
       try {
+        if (!data.endpoint) {
+          await publish(httpRequestChannel().status({
+            nodeId,
+            status: "error"
+          }))
+          throw new NonRetriableError("Endpoint is required.")
+        }
+
+        if (!data.variableName) {
+          await publish(httpRequestChannel().status({
+            nodeId,
+            status: "error"
+          }))
+          throw new NonRetriableError("Variable name is required.")
+        }
+
+        if (!data.method) {
+          await publish(httpRequestChannel().status({
+            nodeId,
+            status: "error"
+          }))
+          throw new NonRetriableError("Method is required.")
+        }
+
+
         const method = data.method
 
         // Compiles the result from the request so that it can be used on to the next request
@@ -71,7 +72,7 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
           throw new NonRetriableError(`Invalid URL: '${endpoint}'. Please ensure the endpoint is a valid URL.`)
         }
 
-        const options: Options = { method }
+        const options: Options = {method}
 
         if (["POST", "PUT", "PATCH"].includes(method)) {
           const resolved = Handlebars.compile(data.body || "{}")(context)
@@ -110,7 +111,7 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
 
         // Re-throw as NonRetriableError to prevent Inngest from retrying
         throw new NonRetriableError(
-          error instanceof Error ? error.message : "HTTP request failed"
+            error instanceof Error ? error.message : "HTTP request failed"
         )
       }
     })
