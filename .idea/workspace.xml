@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="22-stripe-trigger-node">
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add stripe success on trigger">
+      <change afterPath="$PROJECT_DIR$/stripe-testing instructions.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/workflows/stripe/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/workflows/stripe/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/stripe-trigger/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/stripe-trigger/dialog.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +164,7 @@
       <workItem from="1764243647182" duration="3479000" />
       <workItem from="1764249273399" duration="1984000" />
       <workItem from="1764319196049" duration="6658000" />
-      <workItem from="1764329886859" duration="7837000" />
+      <workItem from="1764329886859" duration="9743000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
@@ -287,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764335640687</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add stripe success on trigger">
+      <option name="closed" value="true" />
+      <created>1764338440574</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1764338440575</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +342,8 @@
     <MESSAGE value="add additional changes to branch 20" />
     <MESSAGE value="21-Google-form-submit" />
     <MESSAGE value="22-stripe-trigger-node" />
-    <option name="LAST_COMMIT_MESSAGE" value="22-stripe-trigger-node" />
+    <MESSAGE value="add stripe success on trigger" />
+    <option name="LAST_COMMIT_MESSAGE" value="add stripe success on trigger" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
