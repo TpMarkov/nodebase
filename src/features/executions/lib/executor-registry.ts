@@ -1,8 +1,8 @@
-import { NodeType } from "@/generated/prisma/enums";
-import { NodeExecutor } from "@/features/executions/types";
-import { manualTriggerExecutor } from "@/features/triggers/components/manual-trigger/executor";
-import { httpRequestExecutor } from "@/features/executions/components/http-request/executor";
-import { googleFormTriggerExecutor } from "@/features/triggers/components/google-form-trigger/executor";
+import {NodeType} from "@/generated/prisma/enums";
+import {NodeExecutor} from "@/features/executions/types";
+import {manualTriggerExecutor} from "@/features/triggers/components/manual-trigger/executor";
+import {httpRequestExecutor} from "@/features/executions/components/http-request/executor";
+import {googleFormTriggerExecutor} from "@/features/triggers/components/google-form-trigger/executor";
 
 export const executorRegistry: Record<NodeType, NodeExecutor> = {
   [NodeType.MANUAL_TRIGGER]: manualTriggerExecutor,
@@ -16,5 +16,7 @@ export const getExecutor = (type: NodeType): NodeExecutor => {
   if (!executor) {
     throw new Error(`No executor found for node type: ${type}`)
   }
+
+
   return executor
 }
