@@ -1,14 +1,16 @@
 import {type NextRequest, NextResponse} from "next/server"
 import {inngest} from "@/inngest/client";
 import {sendWorkflowExecution} from "@/inngest/utils";
-import {createServerParamsForMetadata} from "next/dist/server/request/params";
 
 export async function POST(request: NextRequest) {
   try {
     const url = new URL(request.url)
     const workflowId = url.searchParams.get("workflowId")
 
+    console.log("[StripeWebhook] Received request. WorkflowId:", workflowId)
+
     if (!workflowId) {
+      console.error("[StripeWebhook] Missing workflowId in query params")
       return NextResponse.json({
         success: false,
         error: "Missing required query parameter: workflowId"
@@ -33,12 +35,13 @@ export async function POST(request: NextRequest) {
       }
     })
 
-    //  Trigger an Inngest job
+    return NextResponse.json({success: true}, {status: 200})
+
   } catch (error) {
-    console.error("Stripe  webhook error:", error)
+    console.error("Stripe webhook error:", error)
     return NextResponse.json({
       success: false,
-      error: "Failed to process Google form submission"
+      error: "Failed to process Stripe webhook"
     }, {status: 500})
   }
 }

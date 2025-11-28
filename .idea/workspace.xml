@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="21-Google-form-submit">
-      <change afterPath="$PROJECT_DIR$/src/app/api/workflows/stripe/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/stripe-trigger/actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/stripe-trigger/dialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/stripe-trigger/executor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/triggers/components/stripe-trigger/node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="22-stripe-trigger-node">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/node-selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/node-selector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/workflow-node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workflow-node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/node-components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/node-components.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/google-form-trigger/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/google-form-trigger/node.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inngest/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/functions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/workflows/stripe/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/workflows/stripe/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/stripe-trigger/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/stripe-trigger/dialog.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +56,7 @@
   "keyToString": {
     "JavaScript Debug.127.0.0.1:4040.executor": "Debug",
     "JavaScript Debug.127.0.0.1:8288.executor": "Debug",
+    "JavaScript Debug.stripe.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -101,7 +90,7 @@
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components\http-request" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.127.0.0.1:8288">
+  <component name="RunManager" selected="JavaScript Debug.stripe">
     <configuration name="127.0.0.1:4040" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://127.0.0.1:4040">
       <method v="2" />
     </configuration>
@@ -109,6 +98,9 @@
       <method v="2" />
     </configuration>
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="stripe" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000/api/workflows/stripe?workflowId=0a55132f-a196-4ebb-a1ee-bd8eb1a0bdf1">
       <method v="2" />
     </configuration>
     <configuration name="Next.js: server-side" type="js.build_tools.npm">
@@ -123,6 +115,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.stripe" />
         <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
         <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
       </list>
@@ -172,7 +165,7 @@
       <workItem from="1764243647182" duration="3479000" />
       <workItem from="1764249273399" duration="1984000" />
       <workItem from="1764319196049" duration="6658000" />
-      <workItem from="1764329886859" duration="5325000" />
+      <workItem from="1764329886859" duration="7837000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
@@ -286,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764232808806</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="22-stripe-trigger-node">
+      <option name="closed" value="true" />
+      <created>1764335640687</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1764335640687</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +334,8 @@
     <MESSAGE value="add google form-trigger and realtime-status : IMPORT - not working right now" />
     <MESSAGE value="add additional changes to branch 20" />
     <MESSAGE value="21-Google-form-submit" />
-    <option name="LAST_COMMIT_MESSAGE" value="21-Google-form-submit" />
+    <MESSAGE value="22-stripe-trigger-node" />
+    <option name="LAST_COMMIT_MESSAGE" value="22-stripe-trigger-node" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
