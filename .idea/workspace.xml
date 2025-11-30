@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add stripe success on trigger">
-      <change afterPath="$PROJECT_DIR$/stripe-testing instructions.md" afterDir="false" />
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add small regex fix to gemini dialog.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="21-Google-form-submit" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,7 +38,7 @@
     <setting file="file://$PROJECT_DIR$/node_modules/@xyflow/react/dist/esm/types/nodes.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -61,10 +62,10 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "full.screen.before.presentation.mode": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "22-Gemini-Node",
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
-    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/app/api/workflows",
+    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/inngest/channels",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,11 +78,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\inngest\channels" />
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\api\workflows" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\triggers\components" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features" />
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components\http-request" />
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\app\(dashboard)\(rest)\executions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Portfolio PROJECTS\nodebase\src\components\react-flow" />
@@ -164,7 +165,9 @@
       <workItem from="1764243647182" duration="3479000" />
       <workItem from="1764249273399" duration="1984000" />
       <workItem from="1764319196049" duration="6658000" />
-      <workItem from="1764329886859" duration="9743000" />
+      <workItem from="1764329886859" duration="11627000" />
+      <workItem from="1764424295006" duration="2537000" />
+      <workItem from="1764489219994" duration="5081000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
@@ -294,7 +297,31 @@
       <option name="project" value="LOCAL" />
       <updated>1764338440575</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add instructions on how to test stripe trigger and send testing requests">
+      <option name="closed" value="true" />
+      <created>1764340491379</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1764340491379</updated>
+    </task>
+    <task id="LOCAL-00018" summary="22-Gemini-Node">
+      <option name="closed" value="true" />
+      <created>1764494523789</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1764494523789</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add small regex fix to gemini dialog.tsx">
+      <option name="closed" value="true" />
+      <created>1764494780342</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1764494780342</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +370,10 @@
     <MESSAGE value="21-Google-form-submit" />
     <MESSAGE value="22-stripe-trigger-node" />
     <MESSAGE value="add stripe success on trigger" />
-    <option name="LAST_COMMIT_MESSAGE" value="add stripe success on trigger" />
+    <MESSAGE value="add instructions on how to test stripe trigger and send testing requests" />
+    <MESSAGE value="22-Gemini-Node" />
+    <MESSAGE value="add small regex fix to gemini dialog.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="add small regex fix to gemini dialog.tsx" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
