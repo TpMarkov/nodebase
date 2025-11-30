@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="adding updates + Proper connection to geminiExecutor">
-      <change afterPath="$PROJECT_DIR$/src/app/api/realtime/openai/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/dialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/executor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/node.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inngest/channels/openai.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/node-selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/node-selector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/node-components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/node-components.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inngest/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/functions.ts" afterDir="false" />
-    </list>
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="23-OpenAi-Node" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +58,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "full.screen.before.presentation.mode": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "23-OpenAi-Node",
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
     "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/executions/components",
@@ -331,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764494780342</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="23-OpenAi-Node">
+      <option name="closed" value="true" />
+      <created>1764507936710</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1764507936710</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +384,8 @@
     <MESSAGE value="add instructions on how to test stripe trigger and send testing requests" />
     <MESSAGE value="22-Gemini-Node" />
     <MESSAGE value="add small regex fix to gemini dialog.tsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="add small regex fix to gemini dialog.tsx" />
+    <MESSAGE value="23-OpenAi-Node" />
+    <option name="LAST_COMMIT_MESSAGE" value="23-OpenAi-Node" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
