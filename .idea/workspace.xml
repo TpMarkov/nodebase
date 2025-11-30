@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="adding updates + Proper connection to geminiExecutor">
+      <change afterPath="$PROJECT_DIR$/src/app/api/realtime/openai/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/dialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/executor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/node.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/inngest/channels/openai.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/node-selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/node-selector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/node-components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/node-components.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/node.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inngest/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/functions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +73,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
-    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/inngest/channels",
+    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/executions/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,8 +86,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\inngest\channels" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components" />
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\inngest\channels" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\api\workflows" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\triggers\components" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features" />

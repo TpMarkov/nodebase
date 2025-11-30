@@ -30,11 +30,10 @@ import {Textarea} from "@/components/ui/textarea";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
 
-export const AVAILABLE_MODELS = [
-  "gemini-2.0-flash",
-  "gemini-2.0-flash-lite",
-  "gemini-flash-latest",
-  "gemini-pro-latest",
+export const OPENAI_MODELS = [
+  "chatgpt-4o-latest",
+  "gpt-3.5-turbo",
+  "gpt-4",
 ] as const
 
 
@@ -42,7 +41,7 @@ const formSchema = z.object({
   variableName: z.string().min(1, {message: "Variable name is required"}).regex(/^[A-Za-z_$][A-Za-z0-9_$]*$/, {
     message: "Variable name must start with a letter or underscore and contain only letters, numbers, and underscores"
   }),
-  model: z.enum(AVAILABLE_MODELS),
+  model: z.enum(OPENAI_MODELS),
   systemPrompt: z.string().optional(),
   userPrompt: z.string().min(1, "User prompt is required")
 })
@@ -52,12 +51,12 @@ interface Props {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onSubmit: (values: z.infer<typeof formSchema>) => void
-  defaultValues?: Partial<GeminiFormValues>
+  defaultValues?: Partial<OpenAiFormValues>
 }
 
-export type GeminiFormValues = z.infer<typeof formSchema>;
+export type OpenAiFormValues = z.infer<typeof formSchema>;
 
-export const GeminiDialog = ({
+export const OpenAiDialog = ({
                                open,
                                onOpenChange,
                                onSubmit,
@@ -70,7 +69,7 @@ export const GeminiDialog = ({
     defaultValues:
         {
           variableName: defaultValues.variableName || "",
-          model: defaultValues.model || AVAILABLE_MODELS[0],
+          model: defaultValues.model || OPENAI_MODELS[0],
           systemPrompt: defaultValues.systemPrompt || "",
           userPrompt: defaultValues.userPrompt || "",
         }
@@ -81,7 +80,7 @@ export const GeminiDialog = ({
     if (open) {
       form.reset({
         variableName: defaultValues.variableName || "",
-        model: defaultValues.model || AVAILABLE_MODELS[0],
+        model: defaultValues.model || OPENAI_MODELS[0],
         systemPrompt: defaultValues.systemPrompt || "",
         userPrompt: defaultValues.userPrompt || "",
       })
@@ -101,8 +100,8 @@ export const GeminiDialog = ({
           <DialogHeader>
             <DialogTitle>
               <div className={"flex items-center justify-items-start gap-2"}>
-                Gemini
-                <Image src={"/logos/gemini.svg"} width={16} height={16} alt={"gemini-logo"}/>
+                OpenAi
+                <Image src={"/logos/openai.svg"} width={16} height={16} alt={"gemini-logo"}/>
               </div>
             </DialogTitle>
             <DialogDescription>
@@ -135,7 +134,7 @@ export const GeminiDialog = ({
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {AVAILABLE_MODELS.map((model) => (
+                        {OPENAI_MODELS.map((model) => (
                             <SelectItem value={model} key={model}>{model}</SelectItem>
                         ))}
                       </SelectContent>
