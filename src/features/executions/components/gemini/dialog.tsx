@@ -10,11 +10,6 @@ import {useForm} from "react-hook-form";
 
 import {
   Select,
-  SelectSeparator,
-  SelectScrollUpButton,
-  SelectScrollDownButton,
-  SelectGroup,
-  SelectLabel,
   SelectValue, SelectItem, SelectContent, SelectTrigger
 } from "@/components/ui/select";
 import {useEffect} from "react";
@@ -28,7 +23,6 @@ import {
   FormField,
   FormItem,
   FormMessage,
-  useFormField,
   FormLabel,
   FormDescription
 } from "@/components/ui/form";
