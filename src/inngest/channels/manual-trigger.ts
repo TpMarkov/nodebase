@@ -1,8 +1,7 @@
 import {channel, topic} from "@inngest/realtime"
 
-export const MANUAL_TRIGGER_CHANNEL_NAME = "manual-trigger"
 
-export const manualTriggerChannel = channel(MANUAL_TRIGGER_CHANNEL_NAME).addTopic(
+export const manualTriggerChannel = channel("manual-trigger").addTopic(
     topic("status").type<{
       nodeId: string,
       status: "loading" | "success" | "error",
