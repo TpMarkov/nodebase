@@ -1,13 +1,10 @@
-import type {NodeExecutor, WorkflowContext} from "@/features/executions/types";
-import {NonRetriableError} from "inngest";
-import ky, {type Options} from "ky"
+import type { NodeExecutor, WorkflowContext } from "@/features/executions/types";
+import { NonRetriableError } from "inngest";
+import ky, { type Options } from "ky"
 import Handlebars from "handlebars"
-import {httpRequestChannel} from "@/inngest/channels/http-request";
-import {geminiChannel} from "@/inngest/channels/gemini";
-import {createGoogleGenerativeAI} from "@ai-sdk/google";
-import {generateText} from "ai";
-import {openAiChannel} from "@/inngest/channels/openai";
-import {createOpenAI} from "@ai-sdk/openai";
+import { generateText } from "ai";
+import { openAiChannel } from "@/inngest/channels/openai";
+import { createOpenAI } from "@ai-sdk/openai";
 
 interface OpenAiData {
   variableName?: string
@@ -24,9 +21,9 @@ Handlebars.registerHelper("json", (context) => {
 })
 
 export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
-                                                                 data, nodeId, step, context,
-                                                                 publish
-                                                               }) => {
+  data, nodeId, step, context,
+  publish
+}) => {
 
 
   await publish(openAiChannel().status({
@@ -40,7 +37,7 @@ export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
       nodeId,
       status: "error"
     }))
-    throw new NonRetriableError("Gemini Node: Variable name is missing")
+    throw new NonRetriableError("OpenAi Node: Variable name is missing")
   }
 
   if (!data.userPrompt) {
@@ -48,7 +45,7 @@ export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
       nodeId,
       status: "error"
     }))
-    throw new NonRetriableError("Gemini Node: User prompt is missing")
+    throw new NonRetriableError("OpenAi Node: User prompt is missing")
   }
 
   // TODO: Throw error if credentials are missing
@@ -64,7 +61,7 @@ export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
 
   try {
 
-    const {steps} = await step.ai.wrap("gemini-generate-text", generateText, {
+    const { steps } = await step.ai.wrap("openai-generate-text", generateText, {
       model: openAi(data.model || "gpt-4"),
       system: systemPrompt,
       prompt: userPrompt,
