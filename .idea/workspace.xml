@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add small regex fix to gemini dialog.tsx">
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="adding updates + Proper connection to geminiExecutor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/lib/executor-registry.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/node.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "full.screen.before.presentation.mode": "true",
-    "git-widget-placeholder": "22-Gemini-Node",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
     "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/inngest/channels",
@@ -71,7 +72,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "ts.external.directory.path": "D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -116,8 +117,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.stripe" />
-        <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
         <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
+        <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
+        <item itemvalue="JavaScript Debug.stripe" />
+        <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
       </list>
     </recent_temporary>
   </component>
@@ -326,6 +329,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/scripts/list-gemini-models.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
