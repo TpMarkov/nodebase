@@ -42,7 +42,7 @@ export const AVAILABLE_MODELS = [
 
 
 const formSchema = z.object({
-  variableName: z.string().min(1, {message: "Variable name is required"}).regex(/^[A-Za-z_$][A-Za-z0-0_$]*$/, {
+  variableName: z.string().min(1, {message: "Variable name is required"}).regex(/^[A-Za-z_$][A-Za-z0-9_$]*$/, {
     message: "Variable name must start with a letter or underscore and contain only letters, numbers, and underscores"
   }),
   model: z.enum(AVAILABLE_MODELS),
