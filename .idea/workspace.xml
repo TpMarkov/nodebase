@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="23-OpenAi-Node" />
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="23-OpenAi-Node">
+      <change afterPath="$PROJECT_DIR$/src/app/api/realtime/manual-trigger/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/executor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/node.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inngest/channels/manual-trigger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/channels/manual-trigger.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inngest/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/functions.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="23-OpenAi-Node" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +65,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "full.screen.before.presentation.mode": "true",
-    "git-widget-placeholder": "23-OpenAi-Node",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
     "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/executions/components",
@@ -115,7 +122,7 @@
         <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
         <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
         <item itemvalue="JavaScript Debug.stripe" />
-        <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
+        <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
       </list>
     </recent_temporary>
   </component>
