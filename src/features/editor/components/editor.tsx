@@ -109,7 +109,7 @@ export const Editor = ({workflowId}: { workflowId: string }) => {
               </Panel>
           )}
           <Panel position={"top-center"}>
-            <p className={"text-sm text-muted-foreground bg-white"}>Remember to always <span
+            <p className={"text-sm text-muted-foreground bg-white text-center"}>Remember to always <span
                 className={"uppercase font-semibold text-md text-primary"}>save</span>{" "}
               your changes before executing.
             </p>

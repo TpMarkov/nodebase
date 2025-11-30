@@ -3,7 +3,7 @@
 import {createId} from "@paralleldrive/cuid2"
 import {useReactFlow} from "@xyflow/react"
 import {GlobeIcon, MousePointerIcon} from "lucide-react";
-import {useCallback} from "react";
+import React, {useCallback} from "react";
 import {toast} from "sonner"
 import {NodeType} from "@/generated/prisma/enums";
 
@@ -55,7 +55,12 @@ export const executionNodes: NodeTypeOption[] = [
     label: "HTTP Request",
     description: "Makes a HTTP Request",
     icon: GlobeIcon
-  }
+  }, {
+    type: NodeType.GEMINI,
+    label: "Gemini",
+    description: "Use Google Gemini to generate text",
+    icon: "/logos/gemini.svg"
+  },
 ]
 
 interface NodeSelectorProps {
@@ -155,6 +160,7 @@ export const NodeSelector = ({open, onOpenChange, children}: NodeSelectorProps) 
                       </div>
                     </div>
                   </div>
+
               )
             })}
           </div>
