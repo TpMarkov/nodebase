@@ -1,25 +1,24 @@
 import type {inferInput} from "@trpc/tanstack-react-query";
 import {prefetch, trpc} from "@/trpc/server";
 
-
 /**
  * inferInput is type referring to the .input prop used in trpc procedures
  */
 
-type Input = inferInput<typeof trpc.workflows.getMany>;
+type Input = inferInput<typeof trpc.credentials.getMany>;
 
 /**
- * Prefetch all workflows
+ * Prefetch all credentials
  */
-export const prefetchWorkflows = (params: Input) => {
+export const prefetchCredentials = (params: Input) => {
 
-  return prefetch(trpc.workflows.getMany.queryOptions(params))
+    return prefetch(trpc.credentials.getMany.queryOptions(params))
 }
 
 /**
- * Hook that prefetches a single workflow
+ * Hook that prefetches a single credential
  */
 
-export const prefetchWorkflow = (id: string) => {
-  return prefetch(trpc.workflows.getOne.queryOptions({id}))
+export const prefetchCredential = (id: string) => {
+    return prefetch(trpc.credentials.getOne.queryOptions({id}))
 }

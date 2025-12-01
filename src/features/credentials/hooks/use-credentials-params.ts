@@ -1,6 +1,6 @@
 import {useQueryStates} from "nuqs";
-import {workflowsParams} from "@/features/workflows/params";
+import {credentialParams} from "@/features/credentials/params";
 
-export const useWorkflowsParams = () => {
-  return useQueryStates(workflowsParams);
+export const useCredentialsParams = () => {
+    return useQueryStates(credentialParams);
 }

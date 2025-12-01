@@ -1,119 +1,95 @@
 /**
- * Hook to fetch all workflows using suspense
+ * Hook to fetch all credentials using suspense
  */
 import {useTRPC} from "@/trpc/client";
-import {useMutation, useQueryClient, useSuspenseQuery} from "@tanstack/react-query";
+import {useMutation, useQuery, useQueryClient, useSuspenseQuery} from "@tanstack/react-query";
 import {toast} from "sonner";
-import {useWorkflowsParams} from "@/features/workflows/hooks/use-workflows-params";
+import {useCredentialsParams} from "@/features/credentials/hooks/use-credentials-params";
+import {CredentialType} from "@/generated/prisma/enums";
 
-export const useSuspenseWorkflows = () => {
+export const useSuspenseCredentials = () => {
 
-  const trpc = useTRPC()
+    const trpc = useTRPC()
 
-  const [params] = useWorkflowsParams()
+    const [params] = useCredentialsParams()
 
-  return useSuspenseQuery(trpc.workflows.getMany.queryOptions(params))
+    return useSuspenseQuery(trpc.credentials.getMany.queryOptions(params))
 }
 
 /**
- * Hook to create new workflow
+ * Hook to create new credential
  */
-export const useCreateWorkflow = () => {
-  const trpc = useTRPC()
-  const queryClient = useQueryClient()
+export const useCreateCredential = () => {
+    const trpc = useTRPC()
+    const queryClient = useQueryClient()
 
-  return useMutation(trpc.workflows.createWorkflow.mutationOptions({
-    onSuccess: (data) => {
-      toast.success(`Workflow ${data.name} created successfully.`)
-      queryClient.invalidateQueries(trpc.workflows.getMany.queryOptions({}))
-    }, onError: (err) => {
-      toast.error(err.message)
-    }
-  }))
-}
-
-
-/**
- * Hook to remove workflow
- */
-
-export const useRemoveWorkflow = () => {
-  const trpc = useTRPC()
-  const queryClient = useQueryClient()
-
-  return useMutation(trpc.workflows.remove.mutationOptions({
-    onSuccess: (data) => {
-      toast.success(`Workflow ${data.name} removed successfully.`)
-      queryClient.invalidateQueries(trpc.workflows.getMany.queryOptions({}))
-      queryClient.invalidateQueries(trpc.workflows.getOne.queryFilter({
-        id: data.id
-      }))
-    }, onError: (err) => {
-      toast.error(err.message)
-    }
-  }))
-
+    return useMutation(trpc.credentials.create.mutationOptions({
+        onSuccess: (data) => {
+            toast.success(`Credential ${data.name} created successfully.`)
+            queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
+        }, onError: (err) => {
+            toast.error(err.message)
+        }
+    }))
 }
 
 
 /**
- * A hook to fetch a single workflow from a client component
+ * Hook to remove credential
  */
 
-export const useSuspenseWorkflow = (id: string) => {
-  const trpc = useTRPC()
-  return useSuspenseQuery(trpc.workflows.getOne.queryOptions({id}))
+export const useRemoveCredential = () => {
+    const trpc = useTRPC()
+    const queryClient = useQueryClient()
+
+    return useMutation(trpc.credentials.remove.mutationOptions({
+        onSuccess: (data) => {
+            toast.success(`Credential ${data.name} removed successfully.`)
+            queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
+            queryClient.invalidateQueries(trpc.credentials.getOne.queryFilter({
+                id: data.id
+            }))
+        }, onError: (err) => {
+            toast.error(err.message)
+        }
+    }))
+
 }
 
 
 /**
- * Hook to edit the name of the workflow
+ * A hook to fetch a single credential from a client component
  */
 
-export const useUpdateWorkflowName = () => {
-  const trpc = useTRPC()
-  const queryClient = useQueryClient()
+export const useSuspenseCredential = (id: string) => {
+    const trpc = useTRPC()
+    return useSuspenseQuery(trpc.credentials.getOne.queryOptions({id}))
+}
 
-  return useMutation(trpc.workflows.updateName.mutationOptions({
-    onSuccess: (data) => {
-      toast.success(`Workflow ${data.name} updated successfully.`)
-      queryClient.invalidateQueries(trpc.workflows.getOne.queryOptions({id: data.id}))
-    }, onError: (err) => {
-      toast.error(err.message)
-    }
-  }))
+
+/**
+ * Hook that updates and saves the credential
+ */
+export const useUpdateCredential = () => {
+    const trpc = useTRPC()
+    const queryClient = useQueryClient()
+
+    return useMutation(trpc.credentials.update.mutationOptions({
+        onSuccess: (data) => {
+            toast.success(`Credential ${data.name} saved successfully.`)
+            queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
+            queryClient.invalidateQueries(trpc.credentials.getOne.queryOptions({id: data.id}))
+        }, onError: (err) => {
+            toast.error(err.message)
+        }
+    }))
 }
 
 /**
- * Hook that updates and saves the workflow
+ *  Hook to fetch credentials by type
  */
-export const useUpdateWorkflow = () => {
-  const trpc = useTRPC()
-  const queryClient = useQueryClient()
+export const useCredentialsByType = (type: CredentialType) => {
+    const trpc = useTRPC()
+    return useQuery(trpc.credentials.getByType.queryOptions({type}))
 
-  return useMutation(trpc.workflows.update.mutationOptions({
-    onSuccess: (data) => {
-      toast.success(`Workflow ${data.name} saved successfully.`)
-      queryClient.invalidateQueries(trpc.workflows.getMany.queryOptions({}))
-      queryClient.invalidateQueries(trpc.workflows.getOne.queryOptions({id: data.id}))
-    }, onError: (err) => {
-      toast.error(err.message)
-    }
-  }))
-}
-
-/**
- *  Hook to execute workflow
- */
-
-export const useExecuteWorkflow = () => {
-  const trpc = useTRPC()
-
-  return useMutation(trpc.workflows.execute.mutationOptions({
-    onSuccess: (data) => {
-      toast.success(`Workflow ${data.name} executed successfully.`)
-    }, onError: (err) => {
-      toast.error(`Failed to execute: ${err.message}`)
-    }
-  }))
 }
