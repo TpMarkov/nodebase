@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="24-Manual-Trigger-RealtimeStatus">
-      <change afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/new/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/credentials/components/credential.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/credentials/components/credentials.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/credentials/hooks/use-credentials-params.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/credentials/hooks/use-credentials.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/credentials/params.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/credentials/server/params-loader.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/credentials/server/prefetch.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/credentials/server/routers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/[credentialId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/[credentialId]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/entity-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/entity-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/editor/components/editor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/components/workflows.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/components/workflows.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trpc/routers/_app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/trpc/routers/_app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/credentials/components/credential.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/credentials/components/credential.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +172,8 @@
       <workItem from="1764489219994" duration="5081000" />
       <workItem from="1764519852679" duration="952000" />
       <workItem from="1764579256485" duration="14161000" />
-      <workItem from="1764596248699" duration="3717000" />
+      <workItem from="1764596248699" duration="3832000" />
+      <workItem from="1764601509803" duration="5823000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
