@@ -159,7 +159,7 @@ export const DiscordDialog = ({
                     </FormDescription>
                     <FormMessage/>
                   </FormItem>
-              )} name={"username"}/>
+              )} name={"username"} control={form.control}/>
 
               <DialogFooter className="mt-4">
                 <Button type={"submit"}

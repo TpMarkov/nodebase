@@ -90,7 +90,7 @@ export const SlackDialog = ({
             <DialogTitle>
               <div className={"flex items-center justify-items-start gap-2"}>
                 Slack Configuration
-                <Image src={"/logos/slack.svg"} width={16} height={16} alt={"gemini-logo"}/>
+                <Image src={"/logos/slack.svg"} width={16} height={16} alt={"slack-logo"}/>
               </div>
             </DialogTitle>
             <DialogDescription>
@@ -124,7 +124,7 @@ export const SlackDialog = ({
                     </FormDescription>
                     <FormMessage/>
                   </FormItem>
-              )} name={"webhookUrl"}/>
+              )} name={"webhookUrl"} control={form.control}/>
 
               <FormField render={({field}) => (
                   <FormItem>
