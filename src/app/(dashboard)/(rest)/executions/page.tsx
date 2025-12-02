@@ -18,13 +18,13 @@ const Page = async ({ searchParams }: Props) => {
   prefetchExecutions(params);
 
   return (
-    <>
-      <HydrateClient>
-        <ErrorBoundary fallback={<></>}>
-          <Suspense fallback={<></>}>TODO: List for executions</Suspense>
-        </ErrorBoundary>
-      </HydrateClient>
-    </>
+      <>
+        <HydrateClient>
+          <ErrorBoundary fallback={<></>}>
+            <Suspense fallback={<></>}>TODO: List for executions</Suspense>
+          </ErrorBoundary>
+        </HydrateClient>
+      </>
   );
 };
 export default Page;
