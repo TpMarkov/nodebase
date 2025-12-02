@@ -82,7 +82,6 @@ export const SlackDialog = ({
     onOpenChange(false)
   }
 
-
   return (
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent>
@@ -122,6 +121,9 @@ export const SlackDialog = ({
                     <FormDescription>
                       Get this from Slack: Workspace Settings → Workflows → Webhooks
                     </FormDescription>
+                    <FormDescription>
+                      When setting up your webhook with Slack, make sure to add a "key" variable called : "content"
+                    </FormDescription>
                     <FormMessage/>
                   </FormItem>
               )} name={"webhookUrl"} control={form.control}/>
@@ -137,10 +139,10 @@ export const SlackDialog = ({
                       The message to send. Use {"{{variables}}"} for simple values
                       or {"{{json variable}}"} to stringify objects
                     </FormDescription>
+
                     <FormMessage/>
                   </FormItem>
               )} control={form.control} name={"content"}/>
-
               <DialogFooter className="mt-4">
                 <Button type={"submit"}
                 >

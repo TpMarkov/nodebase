@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="small typo fixes">
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20251202130449_discord_slack_nodes/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/executions/server/routers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/nodebase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nodebase.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/discord/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/discord/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/slack/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/slack/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/[executionId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/[executionId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/workflows/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/workflows/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/openAI/node.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/node.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/executions/components/slack/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/slack/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/slack/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/slack/executor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inngest/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inngest/functions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth-utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,33 +65,34 @@
   "keyToString": {
     "JavaScript Debug.127.0.0.1:4040.executor": "Debug",
     "JavaScript Debug.127.0.0.1:8288.executor": "Debug",
+    "JavaScript Debug.localhost:3000.executor": "Debug",
     "JavaScript Debug.stripe.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "full.screen.before.presentation.mode": "true",
-    "git-widget-placeholder": "26-slack-discord-nodes",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
-    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/inngest/channels",
+    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/features/executions/server",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "web-ide.project.structure",
     "ts.external.directory.path": "D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\server" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\inngest\channels" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\api\realtime" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\credentials\server" />
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\credentials" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Portfolio PROJECTS\nodebase\src\components\react-flow" />
@@ -92,7 +100,7 @@
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components\http-request" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.stripe">
+  <component name="RunManager" selected="JavaScript Debug.localhost:3000">
     <configuration name="127.0.0.1:4040" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://127.0.0.1:4040">
       <method v="2" />
     </configuration>
@@ -100,6 +108,9 @@
       <method v="2" />
     </configuration>
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="localhost:3000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
     <configuration name="stripe" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000/api/workflows/stripe?workflowId=0a55132f-a196-4ebb-a1ee-bd8eb1a0bdf1">
@@ -117,16 +128,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.localhost:3000" />
         <item itemvalue="JavaScript Debug.stripe" />
         <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
         <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
+        <item itemvalue="JavaScript Debug.stripe" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-WS-252.28238.10" />
       </set>
     </attachedChunks>
   </component>
@@ -184,6 +197,9 @@
       <workItem from="1764676630321" duration="560000" />
       <workItem from="1764677232121" duration="1101000" />
       <workItem from="1764678387167" duration="11071000" />
+      <workItem from="1764698176113" duration="767000" />
+      <workItem from="1764700960826" duration="88000" />
+      <workItem from="1764702695849" duration="617000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
