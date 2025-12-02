@@ -8,6 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/[credentialId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/[credentialId]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/credentials/components/credential.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/credentials/components/credential.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/credentials/components/credentials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/credentials/components/credentials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/credentials/hooks/use-credentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/credentials/hooks/use-credentials.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/openAI/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/openAI/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/executor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,8 +125,6 @@
         <item itemvalue="JavaScript Debug.stripe" />
         <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
         <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
-        <item itemvalue="JavaScript Debug.stripe" />
-        <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
       </list>
     </recent_temporary>
   </component>
@@ -174,6 +179,13 @@
       <workItem from="1764579256485" duration="14161000" />
       <workItem from="1764596248699" duration="3832000" />
       <workItem from="1764601509803" duration="5823000" />
+      <workItem from="1764612781213" duration="1761000" />
+      <workItem from="1764614673679" duration="392000" />
+      <workItem from="1764615100400" duration="648000" />
+      <workItem from="1764615880274" duration="1396000" />
+      <workItem from="1764617332212" duration="1053000" />
+      <workItem from="1764618505099" duration="313000" />
+      <workItem from="1764655098593" duration="4673000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />

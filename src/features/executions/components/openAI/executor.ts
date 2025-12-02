@@ -1,13 +1,15 @@
-import type { NodeExecutor, WorkflowContext } from "@/features/executions/types";
-import { NonRetriableError } from "inngest";
-import ky, { type Options } from "ky"
+import type {NodeExecutor, WorkflowContext} from "@/features/executions/types";
+import {NonRetriableError} from "inngest";
+import ky, {type Options} from "ky"
 import Handlebars from "handlebars"
-import { generateText } from "ai";
-import { openAiChannel } from "@/inngest/channels/openai";
-import { createOpenAI } from "@ai-sdk/openai";
+import {generateText} from "ai";
+import {openAiChannel} from "@/inngest/channels/openai";
+import {createOpenAI} from "@ai-sdk/openai";
+import prisma from "@/lib/db";
 
 interface OpenAiData {
   variableName?: string
+  credentialId?: string
   model?: string
   systemPrompt?: string
   userPrompt?: string
@@ -21,9 +23,9 @@ Handlebars.registerHelper("json", (context) => {
 })
 
 export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
-  data, nodeId, step, context,
-  publish
-}) => {
+                                                                 data, nodeId, step, context,
+                                                                 publish
+                                                               }) => {
 
 
   await publish(openAiChannel().status({
@@ -31,6 +33,15 @@ export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
     status: "loading"
   }))
   console.log('[openAiChannel] Loading status published for node:', nodeId)
+
+  if (!data.credentialId) {
+    await publish(openAiChannel().status({
+      nodeId,
+      status: "error"
+    }))
+    throw new NonRetriableError("OpenAi Node: Missing credentialId")
+  }
+
 
   if (!data.variableName) {
     await publish(openAiChannel().status({
@@ -51,17 +62,34 @@ export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
   // TODO: Throw error if credentials are missing
 
   const systemPrompt = data.systemPrompt ? Handlebars.compile(data.systemPrompt)(context) : "You are a helpful assistant."
+  const credential = await step.run("get-credentials", () => {
+    return prisma.credential.findUnique({
+      where: {
+        id: data.credentialId
+      }
+    })
+  })
+
+  if (!credential) {
+    await publish(openAiChannel().status({
+      nodeId,
+      status: "error"
+    }))
+    throw new NonRetriableError("OpenAi Node: Missing credentialId")
+  }
 
   const userPrompt = Handlebars.compile(data.userPrompt)(context)
-  const credentialValue = process.env.OPENAI_API_KEY!
+
+  //  Hard-coded credentials
+  // const credentialValue = process.env.OPENAI_API_KEY!
   // TODO: Fetch credential that use selected
   const openAi = createOpenAI({
-    apiKey: credentialValue,
+    apiKey: credential.value,
   })
 
   try {
 
-    const { steps } = await step.ai.wrap("openai-generate-text", generateText, {
+    const {steps} = await step.ai.wrap("openai-generate-text", generateText, {
       model: openAi(data.model || "gpt-4"),
       system: systemPrompt,
       prompt: userPrompt,
