@@ -171,14 +171,15 @@ model Execution {
   startedAt   DateTime  @default(now())
   completedAt DateTime?
 
-  status     ExecutionStatus @default(RUNNING)
-  error      String?         @db.Text
-  errorStack String?         @db.Text
+  status ExecutionStatus @default(RUNNING)
 
-  inngestEvent String @unique
+  error      String? @db.Text
+  errorStack String? @db.Text
 
   workflowId String
   workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  inngestEventId String @unique
 
   output Json?
 }

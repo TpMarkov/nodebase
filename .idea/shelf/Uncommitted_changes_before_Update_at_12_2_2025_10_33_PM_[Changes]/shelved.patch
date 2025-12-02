@@ -1,0 +1,269 @@
+Index: src/features/executions/executions.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/features/executions/executions.tsx b/src/features/executions/executions.tsx
+new file mode 100644
+--- /dev/null	(date 1764707085861)
++++ b/src/features/executions/executions.tsx	(date 1764707085861)
+@@ -0,0 +1,168 @@
++"use client";
++import React from "react";
++import {
++  useSuspenseExecution,
++  useSuspenseExecutions,
++} from "@/features/executions/hooks/use-executions";
++import {
++  EmptyView,
++  EntityContainer,
++  EntityHeader,
++  EntityItem,
++  EntityList,
++  EntityPagination,
++  EntitySearch,
++  ErrorView,
++  LoadingView,
++} from "@/components/entity-components";
++
++import { useRouter } from "next/navigation";
++import { useExecutionsParams } from "@/features/executions/hooks/use-executions-params";
++import { formatDistanceToNow } from "date-fns";
++import { ExecutionStatus } from "@/generated/prisma/browser";
++
++import type { Credential } from "@/generated/prisma/browser";
++import { CredentialType } from "@/generated/prisma/enums";
++
++import Image from "next/image";
++import type { Execution } from "@/generated/prisma/client";
++import {
++  CheckCircleIcon,
++  ClockIcon,
++  Loader2Icon,
++  XCircleIcon,
++} from "lucide-react";
++
++const ExecutionsList = () => {
++  const executions = useSuspenseExecutions();
++
++  return (
++    <EntityList
++      items={executions.data.items}
++      getKey={(execution) => execution.id}
++      emptyView={<ExecutionsEmpty />}
++      renderItem={(execution) => <ExecutionItem data={execution} />}
++    />
++  );
++};
++export default ExecutionsList;
++
++export const ExecutionsHeader = () => {
++  return (
++    <>
++      <EntityHeader
++        title={"Executions"}
++        description={"View your execution workflows history"}
++      />
++    </>
++  );
++};
++
++export const ExecutionsContainer = ({
++  children,
++}: {
++  children: React.ReactNode;
++}) => {
++  return (
++    <EntityContainer
++      header={<ExecutionsHeader />}
++      pagination={<ExecutionsPagination />}
++    >
++      {children}
++    </EntityContainer>
++  );
++};
++
++export const ExecutionsPagination = () => {
++  const executions = useSuspenseExecutions();
++  const [params, setParams] = useExecutionsParams();
++
++  return (
++    <EntityPagination
++      disabled={executions.isFetching}
++      page={executions.data.page}
++      totalPages={executions.data.totalPages}
++      onPageChange={(page) => {
++        setParams({ ...params, page });
++      }}
++    />
++  );
++};
++
++export const ExecutionsLoading = () => {
++  return <LoadingView message={"Loading Executions..."} />;
++};
++
++export const ExecutionsError = () => {
++  return <ErrorView message={"Error loading Executions"} />;
++};
++
++export const ExecutionsEmpty = () => {
++  const router = useRouter();
++
++  return (
++    <EmptyView
++      message={
++        "You haven't created any executions yet. Get started by running your first workflow."
++      }
++    />
++  );
++};
++
++const credentialLogos: Record<CredentialType, string> = {
++  [CredentialType.OPENAI]: "/logos/openai.svg",
++  [CredentialType.GEMINI]: "/logos/gemini.svg",
++  [CredentialType.ANTHROPIC]: "/logos/anthropic.svg",
++};
++
++const getStatusIcon = (status: ExecutionStatus) => {
++  switch (status) {
++    case ExecutionStatus.SUCCESS:
++      return <CheckCircleIcon className="size-5 text-green-600" />;
++    case ExecutionStatus.FAILED:
++      return <XCircleIcon className="size-5 text-red-600" />;
++    case ExecutionStatus.RUNNING:
++      return <Loader2Icon className="size-5 text-blue-600 animate-spin" />;
++    default:
++      return <ClockIcon className="size-5 text-muted-foreground" />;
++  }
++};
++
++export const ExecutionItem = ({
++  data,
++}: {
++  data: Execution & {
++    workflow: {
++      id: string;
++      name: string;
++    };
++  };
++}) => {
++  const duration = data.completedAt
++    ? Math.round(
++        new Date(data.completedAt).getTime() -
++          new Date(data.startedAt).getTime(),
++      ) / 1000
++    : null;
++
++  const subtitle = (
++    <>
++      {data.workflow.name} &bull; Started{" "}
++      {formatDistanceToNow(data.startedAt, { addSuffix: true })}
++      {duration !== null && <> &bull; Took {duration}s </>}
++    </>
++  );
++
++  return (
++    <EntityItem
++      href={`/executions/${data.id}`}
++      title={data.status}
++      subtitle={subtitle}
++      image={
++        <div className={"size-8 flex items-center justify-center"}>
++          {getStatusIcon(data.status)}
++        </div>
++      }
++    />
++  );
++};
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8513f8a2-32dd-49cb-b5d8-67bef3a58a9a\" name=\"Changes\" comment=\"small typo fixes\">\r\n      <change afterPath=\"$PROJECT_DIR$/prisma/migrations/20251202130449_discord_slack_nodes/migration.sql\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/features/executions/components/discord/dialog.tsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/features/executions/components/discord/dialog.tsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/features/executions/components/slack/actions.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/features/executions/components/slack/actions.ts\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/features/executions/components/slack/dialog.tsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/features/executions/components/slack/dialog.tsx\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;TpMarkov&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/TpMarkov/nodebase.git&quot;,\r\n    &quot;accountId&quot;: &quot;6342219e-31aa-4c16-9476-8f4fa14df2f9&quot;\r\n  }\r\n}</component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/node_modules/@xyflow/react/dist/esm/types/nodes.d.ts\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"35hjMjsjqNY8pIHcY1EnsSM1244\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"JavaScript Debug.127.0.0.1:4040.executor\": \"Debug\",\r\n    \"JavaScript Debug.127.0.0.1:8288.executor\": \"Debug\",\r\n    \"JavaScript Debug.stripe.executor\": \"Debug\",\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"full.screen.before.presentation.mode\": \"true\",\r\n    \"git-widget-placeholder\": \"26-slack-discord-nodes\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"js.debugger.nextJs.config.created.client\": \"true\",\r\n    \"last_opened_file_path\": \"D:/Portfolio PROJECTS/nodebase/src/inngest/channels\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"preferences.lookFeel\",\r\n    \"ts.external.directory.path\": \"D:\\\\Portfolio PROJECTS\\\\nodebase\\\\node_modules\\\\typescript\\\\lib\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Portfolio PROJECTS\\nodebase\\src\\inngest\\channels\" />\r\n      <recent name=\"D:\\Portfolio PROJECTS\\nodebase\\src\\app\\api\\realtime\" />\r\n      <recent name=\"D:\\Portfolio PROJECTS\\nodebase\\src\\features\\executions\\components\" />\r\n      <recent name=\"D:\\Portfolio PROJECTS\\nodebase\\src\\features\\credentials\\server\" />\r\n      <recent name=\"D:\\Portfolio PROJECTS\\nodebase\\src\\features\\credentials\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Portfolio PROJECTS\\nodebase\\src\\components\\react-flow\" />\r\n      <recent name=\"D:\\Portfolio PROJECTS\\nodebase\\src\\features\\executions\\components\" />\r\n      <recent name=\"D:\\Portfolio PROJECTS\\nodebase\\src\\features\\executions\\components\\http-request\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JavaScript Debug.stripe\">\r\n    <configuration name=\"127.0.0.1:4040\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://127.0.0.1:4040\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"127.0.0.1:8288\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://127.0.0.1:8288\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Next.js: debug client-side\" type=\"JavascriptDebugType\" uri=\"http://localhost:3000/\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"stripe\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://localhost:3000/api/workflows/stripe?workflowId=0a55132f-a196-4ebb-a1ee-bd8eb1a0bdf1\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Next.js: server-side\" type=\"js.build_tools.npm\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"dev\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JavaScript Debug.stripe\" />\r\n        <item itemvalue=\"JavaScript Debug.127.0.0.1:8288\" />\r\n        <item itemvalue=\"JavaScript Debug.127.0.0.1:4040\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8513f8a2-32dd-49cb-b5d8-67bef3a58a9a\" name=\"Changes\" comment=\"\" />\r\n      <created>1763569179365</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1763569179365</updated>\r\n      <workItem from=\"1763569180474\" duration=\"3922000\" />\r\n      <workItem from=\"1763573977009\" duration=\"1147000\" />\r\n      <workItem from=\"1763575163143\" duration=\"2221000\" />\r\n      <workItem from=\"1763588715095\" duration=\"390000\" />\r\n      <workItem from=\"1763614350015\" duration=\"4469000\" />\r\n      <workItem from=\"1763619947897\" duration=\"4986000\" />\r\n      <workItem from=\"1763628391306\" duration=\"2202000\" />\r\n      <workItem from=\"1763705033412\" duration=\"11036000\" />\r\n      <workItem from=\"1763791784473\" duration=\"735000\" />\r\n      <workItem from=\"1763795612380\" duration=\"348000\" />\r\n      <workItem from=\"1763796007972\" duration=\"21000\" />\r\n      <workItem from=\"1763796053589\" duration=\"1111000\" />\r\n      <workItem from=\"1763797233455\" duration=\"4537000\" />\r\n      <workItem from=\"1763802300358\" duration=\"3697000\" />\r\n      <workItem from=\"1763876363151\" duration=\"2356000\" />\r\n      <workItem from=\"1763965235122\" duration=\"13507000\" />\r\n      <workItem from=\"1763979611566\" duration=\"2424000\" />\r\n      <workItem from=\"1763982765180\" duration=\"3113000\" />\r\n      <workItem from=\"1764049117700\" duration=\"1489000\" />\r\n      <workItem from=\"1764050695639\" duration=\"9264000\" />\r\n      <workItem from=\"1764135146726\" duration=\"5244000\" />\r\n      <workItem from=\"1764140656542\" duration=\"7854000\" />\r\n      <workItem from=\"1764149503617\" duration=\"4537000\" />\r\n      <workItem from=\"1764167846259\" duration=\"2610000\" />\r\n      <workItem from=\"1764236063933\" duration=\"490000\" />\r\n      <workItem from=\"1764236602629\" duration=\"342000\" />\r\n      <workItem from=\"1764237001448\" duration=\"4141000\" />\r\n      <workItem from=\"1764243647182\" duration=\"3479000\" />\r\n      <workItem from=\"1764249273399\" duration=\"1984000\" />\r\n      <workItem from=\"1764319196049\" duration=\"6658000\" />\r\n      <workItem from=\"1764329886859\" duration=\"11627000\" />\r\n      <workItem from=\"1764424295006\" duration=\"2537000\" />\r\n      <workItem from=\"1764489219994\" duration=\"5081000\" />\r\n      <workItem from=\"1764519852679\" duration=\"952000\" />\r\n      <workItem from=\"1764579256485\" duration=\"14161000\" />\r\n      <workItem from=\"1764596248699\" duration=\"3832000\" />\r\n      <workItem from=\"1764601509803\" duration=\"5823000\" />\r\n      <workItem from=\"1764612781213\" duration=\"1761000\" />\r\n      <workItem from=\"1764614673679\" duration=\"392000\" />\r\n      <workItem from=\"1764615100400\" duration=\"648000\" />\r\n      <workItem from=\"1764615880274\" duration=\"1396000\" />\r\n      <workItem from=\"1764617332212\" duration=\"1053000\" />\r\n      <workItem from=\"1764618505099\" duration=\"313000\" />\r\n      <workItem from=\"1764655098593\" duration=\"4673000\" />\r\n      <workItem from=\"1764676630321\" duration=\"560000\" />\r\n      <workItem from=\"1764677232121\" duration=\"1101000\" />\r\n      <workItem from=\"1764678387167\" duration=\"11071000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"add some changes\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763626143484</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763626143484</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"remove console.log\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763626573097</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763626573097</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"saentry\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763633960627</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763633960627</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"12-workflows-pagination-search\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763732017750</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763732017750</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"add small fixes to 16-node-types\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763916915279</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763916915279</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"add small fixes with imports and on deleting node to cascate all the existing connections\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763987373653</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763987373653</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"add fix to generic types base-node.tsx\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763988554861</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763988554861</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"add fixes to : 18-execute-httpRequest\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764062762891</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764062762891</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"add fixes 2 to : 18-execute-httpRequest\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764077539543</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764077539543</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"19-execute-http-with-dynamic-params\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764080690295</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764080690295</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"20-http-request-live-status-not-working\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764152595071</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764152595071</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"add try and catch at the executor.ts\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764169284141</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764169284141</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"add google form-trigger and realtime-status : IMPORT - not working right now\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764230847261</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764230847261</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"add additional changes to branch 20\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764232808806</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764232808806</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"22-stripe-trigger-node\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764335640687</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764335640687</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"add stripe success on trigger\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764338440574</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764338440575</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"add instructions on how to test stripe trigger and send testing requests\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764340491379</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764340491379</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"22-Gemini-Node\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764494523789</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764494523789</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"add small regex fix to gemini dialog.tsx\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764494780342</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764494780342</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"23-OpenAi-Node\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764507936710</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764507936710</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"24-Manual-Trigger-RealtimeStatus\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764510323698</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764510323698</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"26-slag-discord-nodes\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1764689898325</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1764689898325</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"23\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n    <option name=\"exactExcludedFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/scripts/list-gemini-models.js\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"HEAD\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"saentry\" />\r\n    <MESSAGE value=\"11-workflows-actions-view\" />\r\n    <MESSAGE value=\"13-workflows-view+remove\" />\r\n    <MESSAGE value=\"add small fixes to 16-node-types\" />\r\n    <MESSAGE value=\"add small fixes with imports and on deleting node to cascate all the existing connections\" />\r\n    <MESSAGE value=\"add fix to generic types base-node.tsx\" />\r\n    <MESSAGE value=\"18-execute-httpRequest\" />\r\n    <MESSAGE value=\"add fixes to : 18-execute-httpRequest\" />\r\n    <MESSAGE value=\"add fixes 2 to : 18-execute-httpRequest\" />\r\n    <MESSAGE value=\"19-execute-http-with-dynamic-params\" />\r\n    <MESSAGE value=\"20-http-request-live-status-not-working\" />\r\n    <MESSAGE value=\"add try and catch at the executor.ts\" />\r\n    <MESSAGE value=\"add google form-trigger and realtime-status : IMPORT - not working right now\" />\r\n    <MESSAGE value=\"add additional changes to branch 20\" />\r\n    <MESSAGE value=\"21-Google-form-submit\" />\r\n    <MESSAGE value=\"22-stripe-trigger-node\" />\r\n    <MESSAGE value=\"add stripe success on trigger\" />\r\n    <MESSAGE value=\"add instructions on how to test stripe trigger and send testing requests\" />\r\n    <MESSAGE value=\"22-Gemini-Node\" />\r\n    <MESSAGE value=\"add small regex fix to gemini dialog.tsx\" />\r\n    <MESSAGE value=\"23-OpenAi-Node\" />\r\n    <MESSAGE value=\"24-Manual-Trigger-RealtimeStatus\" />\r\n    <MESSAGE value=\"25-Credentials-validation-for-openai-and-gemini\" />\r\n    <MESSAGE value=\"26-slag-discord-nodes\" />\r\n    <MESSAGE value=\"small typo fixes\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"small typo fixes\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"javascript\">\r\n          <url>file://$PROJECT_DIR$/src/components/ui/sonner.tsx</url>\r\n          <line>2</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3ac12bbc3ca9e647fb0f7b142c21f2437675ff7a)
++++ b/.idea/workspace.xml	(date 1764707408959)
+@@ -54,30 +54,30 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "JavaScript Debug.127.0.0.1:4040.executor": "Debug",
+-    "JavaScript Debug.127.0.0.1:8288.executor": "Debug",
+-    "JavaScript Debug.stripe.executor": "Debug",
+-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "full.screen.before.presentation.mode": "true",
+-    "git-widget-placeholder": "26-slack-discord-nodes",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "js.debugger.nextJs.config.created.client": "true",
+-    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/inngest/channels",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "preferences.lookFeel",
+-    "ts.external.directory.path": "D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;JavaScript Debug.127.0.0.1:4040.executor&quot;: &quot;Debug&quot;,
++    &quot;JavaScript Debug.127.0.0.1:8288.executor&quot;: &quot;Debug&quot;,
++    &quot;JavaScript Debug.stripe.executor&quot;: &quot;Debug&quot;,
++    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;full.screen.before.presentation.mode&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;26-slack-discord-nodes&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/Portfolio PROJECTS/nodebase/src/inngest/channels&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="D:\Portfolio PROJECTS\nodebase\src\inngest\channels" />
+Index: src/app/(dashboard)/(rest)/executions/page.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"use client\"\r\nimport React, {useState} from 'react'\r\n\r\n\r\nconst Page = () => {\r\n\r\n  return (\r\n      <div>Executions Page</div>\r\n  )\r\n}\r\nexport default Page\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/(dashboard)/(rest)/executions/page.tsx b/src/app/(dashboard)/(rest)/executions/page.tsx
+--- a/src/app/(dashboard)/(rest)/executions/page.tsx	(revision 3ac12bbc3ca9e647fb0f7b142c21f2437675ff7a)
++++ b/src/app/(dashboard)/(rest)/executions/page.tsx	(date 1764707191761)
+@@ -1,11 +1,7 @@
+-"use client"
+-import React, {useState} from 'react'
+-
++"use client";
++import React, { useState } from "react";
+ 
+ const Page = () => {
+-
+-  return (
+-      <div>Executions Page</div>
+-  )
+-}
+-export default Page
++  return <div>Executions Page</div>;
++};
++export default Page;
