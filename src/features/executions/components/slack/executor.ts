@@ -88,5 +88,4 @@ export const slackExecutor: NodeExecutor<SlackData> = async ({
     }))
     throw error
   }
-
 }
