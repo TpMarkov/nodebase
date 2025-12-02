@@ -1,15 +1,17 @@
-import type { NodeExecutor, WorkflowContext } from "@/features/executions/types";
-import { NonRetriableError } from "inngest";
-import ky, { type Options } from "ky"
+import type {NodeExecutor, WorkflowContext} from "@/features/executions/types";
+import {NonRetriableError} from "inngest";
+import ky, {type Options} from "ky"
 import Handlebars from "handlebars"
-import { httpRequestChannel } from "@/inngest/channels/http-request";
-import { geminiChannel } from "@/inngest/channels/gemini";
-import { createGoogleGenerativeAI } from "@ai-sdk/google";
-import { generateText } from "ai";
-import { AVAILABLE_MODELS } from "@/features/executions/components/gemini/dialog";
+import {httpRequestChannel} from "@/inngest/channels/http-request";
+import {geminiChannel} from "@/inngest/channels/gemini";
+import {createGoogleGenerativeAI} from "@ai-sdk/google";
+import {generateText} from "ai";
+import {AVAILABLE_MODELS} from "@/features/executions/components/gemini/dialog";
+import prisma from "@/lib/db";
 
 interface GeminiData {
   variableName?: string
+  credentialId?: string
   model?: string
   systemPrompt?: string
   userPrompt?: string
@@ -23,9 +25,9 @@ Handlebars.registerHelper("json", (context) => {
 })
 
 export const geminiExecutor: NodeExecutor<GeminiData> = async ({
-  data, nodeId, step, context,
-  publish
-}) => {
+                                                                 data, nodeId, step, context,
+                                                                 publish
+                                                               }) => {
 
 
   await publish(geminiChannel().status({
@@ -33,6 +35,15 @@ export const geminiExecutor: NodeExecutor<GeminiData> = async ({
     status: "loading"
   }))
   console.log('[geminiChannel] Loading status published for node:', nodeId)
+
+
+  if (!data.credentialId) {
+    await publish(geminiChannel().status({
+      nodeId,
+      status: "error"
+    }))
+    throw new NonRetriableError("Gemini Node: Invalid or missing API key")
+  }
 
   if (!data.variableName) {
     await publish(geminiChannel().status({
@@ -54,16 +65,35 @@ export const geminiExecutor: NodeExecutor<GeminiData> = async ({
 
   const systemPrompt = data.systemPrompt ? Handlebars.compile(data.systemPrompt)(context) : "You are a helpful assistant."
 
+  const credential = await step.run("get-credential", () => {
+    return prisma.credential.findUnique({
+      where: {
+        id: data.credentialId
+      }
+    })
+  })
+
+  if (!credential) {
+    await publish(geminiChannel().status({
+      nodeId,
+      status: "error"
+    }))
+    throw new NonRetriableError("Gemini Node: Credential is missing")
+  }
+
   const userPrompt = Handlebars.compile(data.userPrompt)(context)
-  const credentialValue = process.env.GOOGLE_GENERATIVE_AI_API_KEY!
+
+  // Hard-coded credentials
+  // const credentialValue = process.env.GOOGLE_GENERATIVE_AI_API_KEY!
+
   // TODO: Fetch credential that use selected
   const google = createGoogleGenerativeAI({
-    apiKey: credentialValue,
+    apiKey: credential.value,
   })
 
   try {
 
-    const { steps } = await step.ai.wrap("gemini-generate-text", generateText, {
+    const {steps} = await step.ai.wrap("gemini-generate-text", generateText, {
       model: google(data.model || "gemini-2.0-flash"),
       system: systemPrompt,
       prompt: userPrompt,

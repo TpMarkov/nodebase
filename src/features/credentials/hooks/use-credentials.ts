@@ -9,28 +9,28 @@ import {CredentialType} from "@/generated/prisma/enums";
 
 export const useSuspenseCredentials = () => {
 
-    const trpc = useTRPC()
+  const trpc = useTRPC()
 
-    const [params] = useCredentialsParams()
+  const [params] = useCredentialsParams()
 
-    return useSuspenseQuery(trpc.credentials.getMany.queryOptions(params))
+  return useSuspenseQuery(trpc.credentials.getMany.queryOptions(params))
 }
 
 /**
  * Hook to create new credential
  */
 export const useCreateCredential = () => {
-    const trpc = useTRPC()
-    const queryClient = useQueryClient()
+  const trpc = useTRPC()
+  const queryClient = useQueryClient()
 
-    return useMutation(trpc.credentials.create.mutationOptions({
-        onSuccess: (data) => {
-            toast.success(`Credential ${data.name} created successfully.`)
-            queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
-        }, onError: (err) => {
-            toast.error(err.message)
-        }
-    }))
+  return useMutation(trpc.credentials.create.mutationOptions({
+    onSuccess: (data) => {
+      toast.success(`Credential ${data.name} created successfully.`)
+      queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
+    }, onError: (err) => {
+      toast.error(err.message)
+    }
+  }))
 }
 
 
@@ -39,21 +39,20 @@ export const useCreateCredential = () => {
  */
 
 export const useRemoveCredential = () => {
-    const trpc = useTRPC()
-    const queryClient = useQueryClient()
+  const trpc = useTRPC()
+  const queryClient = useQueryClient()
 
-    return useMutation(trpc.credentials.remove.mutationOptions({
-        onSuccess: (data) => {
-            toast.success(`Credential ${data.name} removed successfully.`)
-            queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
-            queryClient.invalidateQueries(trpc.credentials.getOne.queryFilter({
-                id: data.id
-            }))
-        }, onError: (err) => {
-            toast.error(err.message)
-        }
-    }))
-
+  return useMutation(trpc.credentials.remove.mutationOptions({
+    onSuccess: (data) => {
+      toast.success(`Credential ${data.name} removed successfully.`)
+      queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
+      queryClient.invalidateQueries(trpc.credentials.getOne.queryFilter({
+        id: data.id
+      }))
+    }, onError: (err) => {
+      toast.error(err.message)
+    }
+  }))
 }
 
 
@@ -62,8 +61,8 @@ export const useRemoveCredential = () => {
  */
 
 export const useSuspenseCredential = (id: string) => {
-    const trpc = useTRPC()
-    return useSuspenseQuery(trpc.credentials.getOne.queryOptions({id}))
+  const trpc = useTRPC()
+  return useSuspenseQuery(trpc.credentials.getOne.queryOptions({id}))
 }
 
 
@@ -71,25 +70,24 @@ export const useSuspenseCredential = (id: string) => {
  * Hook that updates and saves the credential
  */
 export const useUpdateCredential = () => {
-    const trpc = useTRPC()
-    const queryClient = useQueryClient()
+  const trpc = useTRPC()
+  const queryClient = useQueryClient()
 
-    return useMutation(trpc.credentials.update.mutationOptions({
-        onSuccess: (data) => {
-            toast.success(`Credential ${data.name} saved successfully.`)
-            queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
-            queryClient.invalidateQueries(trpc.credentials.getOne.queryOptions({id: data.id}))
-        }, onError: (err) => {
-            toast.error(err.message)
-        }
-    }))
+  return useMutation(trpc.credentials.update.mutationOptions({
+    onSuccess: (data) => {
+      toast.success(`Credential ${data.name} saved successfully.`)
+      queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
+      queryClient.invalidateQueries(trpc.credentials.getOne.queryOptions({id: data.id}))
+    }, onError: (err) => {
+      toast.error(err.message)
+    }
+  }))
 }
 
 /**
  *  Hook to fetch credentials by type
  */
 export const useCredentialsByType = (type: CredentialType) => {
-    const trpc = useTRPC()
-    return useQuery(trpc.credentials.getByType.queryOptions({type}))
-
+  const trpc = useTRPC()
+  return useQuery(trpc.credentials.getByType.queryOptions({type}))
 }
