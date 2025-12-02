@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="24-Manual-Trigger-RealtimeStatus">
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="small typo fixes">
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20251202130449_discord_slack_nodes/migration.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/[credentialId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/credentials/[credentialId]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/credentials/components/credential.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/credentials/components/credential.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/credentials/components/credentials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/credentials/components/credentials.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/credentials/hooks/use-credentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/credentials/hooks/use-credentials.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/openAI/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/components/openAI/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/executor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/workflows/server/routers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/discord/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/discord/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/slack/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/slack/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/slack/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/slack/dialog.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="23-OpenAi-Node" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,37 +54,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.127.0.0.1:4040.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.127.0.0.1:8288.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.stripe.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Portfolio PROJECTS/nodebase/src/features/credentials/server&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.127.0.0.1:4040.executor": "Debug",
+    "JavaScript Debug.127.0.0.1:8288.executor": "Debug",
+    "JavaScript Debug.stripe.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "full.screen.before.presentation.mode": "true",
+    "git-widget-placeholder": "26-slack-discord-nodes",
+    "ignore.virus.scanning.warn.message": "true",
+    "js.debugger.nextJs.config.created.client": "true",
+    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/inngest/channels",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\inngest\channels" />
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\app\api\realtime" />
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\credentials\server" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\credentials" />
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components" />
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\inngest\channels" />
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\app\api\workflows" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Portfolio PROJECTS\nodebase\src\components\react-flow" />
@@ -186,6 +181,9 @@
       <workItem from="1764617332212" duration="1053000" />
       <workItem from="1764618505099" duration="313000" />
       <workItem from="1764655098593" duration="4673000" />
+      <workItem from="1764676630321" duration="560000" />
+      <workItem from="1764677232121" duration="1101000" />
+      <workItem from="1764678387167" duration="11071000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
@@ -355,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764510323698</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="26-slag-discord-nodes">
+      <option name="closed" value="true" />
+      <created>1764689898325</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1764689898325</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,8 +396,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add some changes" />
-    <MESSAGE value="remove console.log" />
     <MESSAGE value="saentry" />
     <MESSAGE value="11-workflows-actions-view" />
     <MESSAGE value="13-workflows-view+remove" />
@@ -414,7 +418,10 @@
     <MESSAGE value="add small regex fix to gemini dialog.tsx" />
     <MESSAGE value="23-OpenAi-Node" />
     <MESSAGE value="24-Manual-Trigger-RealtimeStatus" />
-    <option name="LAST_COMMIT_MESSAGE" value="24-Manual-Trigger-RealtimeStatus" />
+    <MESSAGE value="25-Credentials-validation-for-openai-and-gemini" />
+    <MESSAGE value="26-slag-discord-nodes" />
+    <MESSAGE value="small typo fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small typo fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

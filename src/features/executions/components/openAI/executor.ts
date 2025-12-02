@@ -24,7 +24,7 @@ Handlebars.registerHelper("json", (context) => {
 
 export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
                                                                  data, nodeId, step, context,
-                                                                 publish
+                                                                 publish, userId
                                                                }) => {
 
 
@@ -65,7 +65,8 @@ export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
   const credential = await step.run("get-credentials", () => {
     return prisma.credential.findUnique({
       where: {
-        id: data.credentialId
+        id: data.credentialId,
+        userId
       }
     })
   })
@@ -106,6 +107,7 @@ export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
       nodeId,
       status: "success"
     }))
+
     return {
       ...context,
       [data.variableName]: {
