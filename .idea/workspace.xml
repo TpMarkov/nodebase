@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="27-executions-history" />
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add fix to google and github buttons redirecting twice on sign in and sign-up">
+      <change beforePath="$PROJECT_DIR$/src/lib/polar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/polar.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -377,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764710662859</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add fix to google and github buttons redirecting twice on sign in and sign-up">
+      <option name="closed" value="true" />
+      <created>1764788300398</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1764788300398</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +422,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="13-workflows-view+remove" />
     <MESSAGE value="add small fixes to 16-node-types" />
     <MESSAGE value="add small fixes with imports and on deleting node to cascate all the existing connections" />
     <MESSAGE value="add fix to generic types base-node.tsx" />
@@ -437,7 +446,8 @@
     <MESSAGE value="small typo fixes" />
     <MESSAGE value="add last changes to executions" />
     <MESSAGE value="27-executions-history" />
-    <option name="LAST_COMMIT_MESSAGE" value="27-executions-history" />
+    <MESSAGE value="add fix to google and github buttons redirecting twice on sign in and sign-up" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fix to google and github buttons redirecting twice on sign in and sign-up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
