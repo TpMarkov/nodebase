@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="small typo fixes">
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="27-executions-history">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/[executionId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/[executionId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/server/routers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "full.screen.before.presentation.mode": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "28-executions-history",
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
     "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/inngest/channels",
@@ -117,6 +118,8 @@
         <item itemvalue="JavaScript Debug.stripe" />
         <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
         <item itemvalue="JavaScript Debug.127.0.0.1:4040" />
+        <item itemvalue="JavaScript Debug.stripe" />
+        <item itemvalue="JavaScript Debug.127.0.0.1:8288" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +184,8 @@
       <workItem from="1764676630321" duration="560000" />
       <workItem from="1764677232121" duration="1101000" />
       <workItem from="1764678387167" duration="11071000" />
-      <workItem from="1764707296915" duration="197000" />
+      <workItem from="1764707296915" duration="3951000" />
+      <workItem from="1764746858277" duration="3028000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
@@ -359,7 +363,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764689898325</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add last changes to executions">
+      <option name="closed" value="true" />
+      <created>1764707768438</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1764707768438</updated>
+    </task>
+    <task id="LOCAL-00024" summary="27-executions-history">
+      <option name="closed" value="true" />
+      <created>1764710662859</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1764710662859</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,8 +414,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="saentry" />
-    <MESSAGE value="11-workflows-actions-view" />
     <MESSAGE value="13-workflows-view+remove" />
     <MESSAGE value="add small fixes to 16-node-types" />
     <MESSAGE value="add small fixes with imports and on deleting node to cascate all the existing connections" />
@@ -419,7 +437,9 @@
     <MESSAGE value="25-Credentials-validation-for-openai-and-gemini" />
     <MESSAGE value="26-slag-discord-nodes" />
     <MESSAGE value="small typo fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small typo fixes" />
+    <MESSAGE value="add last changes to executions" />
+    <MESSAGE value="27-executions-history" />
+    <option name="LAST_COMMIT_MESSAGE" value="27-executions-history" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
