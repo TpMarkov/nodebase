@@ -117,7 +117,6 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
     })
 
 
-    // TODO: Publish "success" state for manual trigger
     console.log('[httpRequestExecutor] Publishing success status for node:', nodeId)
     await publish(httpRequestChannel().status({
       nodeId,
