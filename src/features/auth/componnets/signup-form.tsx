@@ -40,6 +40,34 @@ export const SignupForm = () => {
   });
   const isPending = form.formState.isSubmitting
 
+
+  const signInGithub = async () => {
+    await authClient.signIn.social({
+          provider: "github",
+        }, {
+          onSuccess: () => {
+            router.push("/")
+          }, onError: () => {
+            toast.error("Invalid email or password")
+          }
+        },
+    )
+  }
+
+
+  const signInGoogle = async () => {
+    await authClient.signIn.social({
+          provider: "google",
+        }, {
+          onSuccess: () => {
+            router.push("/")
+          }, onError: () => {
+            toast.error("Invalid email or password")
+          }
+        },
+    )
+  }
+
   const onSubmit = async (values: SignupFormValues) => {
     await authClient.signUp.email({
       email: values.email,
@@ -67,12 +95,15 @@ export const SignupForm = () => {
               <form onSubmit={form.handleSubmit(onSubmit)}>
                 <div className={"grid gap-6"}>
                   <div className={"flex flex-col gap-4"}>
-                    <Button variant={"outline"} className={"w-full"}>
+                    <Button variant={"outline"} className={"w-full"}
+                            onClick={signInGithub}
+                    >
                       <Image src={"/logos/github.svg"} alt={"github-logo"} width={20} height={20}/>
                       Continue with GitHub
                     </Button>
 
-                    <Button variant={"outline"} className={"w-full"}>
+                    <Button variant={"outline"} className={"w-full"}
+                            onClick={signInGoogle}>
                       <Image src={"/logos/google.svg"} alt={"google-logo"} width={20} height={20}/>
                       Continue with Google
                     </Button>
