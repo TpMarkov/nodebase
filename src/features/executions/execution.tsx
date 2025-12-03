@@ -60,7 +60,7 @@ export const ExecutionView = ({executionId}: { executionId: string }) => {
       : null;
 
   return (
-      <Card className="shadown-none">
+      <Card className="shadow-none">
         <CardHeader>
           <div className="flex items-center gap-3">
             {getStatusIcon(execution.status)}
@@ -108,7 +108,7 @@ export const ExecutionView = ({executionId}: { executionId: string }) => {
 
             <div>
               <p className={"text-sm font-medium text-muted-foreground"}>Event Id</p>
-              <p className={"text-sm"}>{execution.inngestEventId}s</p>
+              <p className={"text-sm"}>{execution.inngestEventId}</p>
             </div>
 
           </div>
