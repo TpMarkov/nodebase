@@ -43,7 +43,6 @@ const formSchema = z.object({
   endpoint: z.string().min(1, {message: "Please add a valid URL!"}),
   method: z.enum(["GET", "POST", "PATCH", "DELETE", "PUT"]),
   body: z.string().optional()
-  // .refine()
 })
 
 

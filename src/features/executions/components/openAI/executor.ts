@@ -6,6 +6,7 @@ import {generateText} from "ai";
 import {openAiChannel} from "@/inngest/channels/openai";
 import {createOpenAI} from "@ai-sdk/openai";
 import prisma from "@/lib/db";
+import {decrypt} from "@/lib/encription";
 
 interface OpenAiData {
   variableName?: string
@@ -59,7 +60,6 @@ export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
     throw new NonRetriableError("OpenAi Node: User prompt is missing")
   }
 
-  // TODO: Throw error if credentials are missing
 
   const systemPrompt = data.systemPrompt ? Handlebars.compile(data.systemPrompt)(context) : "You are a helpful assistant."
   const credential = await step.run("get-credentials", () => {
@@ -83,9 +83,8 @@ export const openAiExecutor: NodeExecutor<OpenAiData> = async ({
 
   //  Hard-coded credentials
   // const credentialValue = process.env.OPENAI_API_KEY!
-  // TODO: Fetch credential that use selected
   const openAi = createOpenAI({
-    apiKey: credential.value,
+    apiKey: decrypt(credential.value),
   })
 
   try {

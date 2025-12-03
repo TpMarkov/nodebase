@@ -8,6 +8,7 @@ import {createGoogleGenerativeAI} from "@ai-sdk/google";
 import {generateText} from "ai";
 import {AVAILABLE_MODELS} from "@/features/executions/components/gemini/dialog";
 import prisma from "@/lib/db";
+import {decrypt} from "@/lib/encription";
 
 interface GeminiData {
   variableName?: string
@@ -61,7 +62,6 @@ export const geminiExecutor: NodeExecutor<GeminiData> = async ({
     throw new NonRetriableError("Gemini Node: User prompt is missing")
   }
 
-  // TODO: Throw error if credentials are missing
 
   const systemPrompt = data.systemPrompt ? Handlebars.compile(data.systemPrompt)(context) : "You are a helpful assistant."
 
@@ -87,9 +87,8 @@ export const geminiExecutor: NodeExecutor<GeminiData> = async ({
   // Hard-coded credentials
   // const credentialValue = process.env.GOOGLE_GENERATIVE_AI_API_KEY!
 
-  // TODO: Fetch credential that use selected
   const google = createGoogleGenerativeAI({
-    apiKey: credential.value,
+    apiKey: decrypt(credential.value)
   })
 
   try {

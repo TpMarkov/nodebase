@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="27-executions-history">
+      <change afterPath="$PROJECT_DIR$/src/lib/encription.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/[executionId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(dashboard)/(rest)/executions/[executionId]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/executions/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/server/routers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/credentials/server/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/credentials/server/routers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/gemini/executor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/http-request/executor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/executions/components/openAI/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/executions/components/openAI/executor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/executor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/triggers/components/manual-trigger/executor.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +69,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "full.screen.before.presentation.mode": "true",
-    "git-widget-placeholder": "28-executions-history",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
     "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/inngest/channels",
@@ -186,6 +193,7 @@
       <workItem from="1764678387167" duration="11071000" />
       <workItem from="1764707296915" duration="3951000" />
       <workItem from="1764746858277" duration="3028000" />
+      <workItem from="1764751950451" duration="1921000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
