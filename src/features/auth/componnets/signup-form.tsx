@@ -44,12 +44,6 @@ export const SignupForm = () => {
   const signInGithub = async () => {
     await authClient.signIn.social({
           provider: "github",
-        }, {
-          onSuccess: () => {
-            router.push("/")
-          }, onError: () => {
-            toast.error("Invalid email or password")
-          }
         },
     )
   }
@@ -58,12 +52,6 @@ export const SignupForm = () => {
   const signInGoogle = async () => {
     await authClient.signIn.social({
           provider: "google",
-        }, {
-          onSuccess: () => {
-            router.push("/")
-          }, onError: () => {
-            toast.error("Invalid email or password")
-          }
         },
     )
   }
@@ -97,13 +85,17 @@ export const SignupForm = () => {
                   <div className={"flex flex-col gap-4"}>
                     <Button variant={"outline"} className={"w-full"}
                             onClick={signInGithub}
+                            type={"button"}
+                            disabled={isPending}
                     >
                       <Image src={"/logos/github.svg"} alt={"github-logo"} width={20} height={20}/>
                       Continue with GitHub
                     </Button>
 
                     <Button variant={"outline"} className={"w-full"}
-                            onClick={signInGoogle}>
+                            onClick={signInGoogle}
+                            type={"button"}
+                            disabled={isPending}>
                       <Image src={"/logos/google.svg"} alt={"google-logo"} width={20} height={20}/>
                       Continue with Google
                     </Button>

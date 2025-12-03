@@ -38,13 +38,7 @@ const LoginForm = () => {
   const signInGithub = async () => {
     await authClient.signIn.social({
           provider: "github",
-        }, {
-          onSuccess: () => {
-            router.push("/")
-          }, onError: () => {
-            toast.error("Invalid email or password")
-          }
-        },
+        }
     )
   }
 
@@ -52,13 +46,7 @@ const LoginForm = () => {
   const signInGoogle = async () => {
     await authClient.signIn.social({
           provider: "google",
-        }, {
-          onSuccess: () => {
-            router.push("/")
-          }, onError: () => {
-            toast.error("Invalid email or password")
-          }
-        },
+        }
     )
   }
 
@@ -89,6 +77,8 @@ const LoginForm = () => {
                         variant={"outline"}
                         className={"w-full"}
                         onClick={signInGithub}
+                        type={"button"}
+                        disabled={isPending}
                     >
                       <Image src={"/logos/github.svg"} alt={"github-logo"} width={20} height={20}/>
                       Continue with GitHub
@@ -97,6 +87,8 @@ const LoginForm = () => {
                         variant={"outline"}
                         className={"w-full"}
                         onClick={signInGoogle}
+                        type={"button"}
+                        disabled={isPending}
                     >
                       <Image src={"/logos/google.svg"} alt={"google-logo"} width={20} height={20}/>
                       Continue with Google
