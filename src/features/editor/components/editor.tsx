@@ -1,9 +1,9 @@
 "use client"
 import React from 'react'
-import {useSuspenseWorkflow, useUpdateWorkflowName} from "@/features/workflows/hooks/use-workflows";
-import {ErrorView, LoadingView} from "@/components/entity-components";
-import {BreadcrumbItem} from "@/components/ui/breadcrumb";
-import {useState, useCallback, useMemo} from "react";
+import { useSuspenseWorkflow, useUpdateWorkflowName } from "@/features/workflows/hooks/use-workflows";
+import { ErrorView, LoadingView } from "@/components/entity-components";
+import { BreadcrumbItem } from "@/components/ui/breadcrumb";
+import { useState, useCallback, useMemo } from "react";
 import {
     type Node,
     applyNodeChanges,
@@ -14,29 +14,29 @@ import {
     EdgeChange, type Connection, ReactFlow, Background, Controls, MiniMap, Panel
 } from "@xyflow/react"
 import '@xyflow/react/dist/style.css';
-import {nodeComponents} from "@/config/node-components";
-import {AddNodeButton} from "@/features/editor/components/add-node-button";
-import {useAtom} from "jotai";
-import {editorAtom} from "@/features/editor/store/atoms";
-import {NodeType} from "@/generated/prisma/enums";
-import {ExecuteWorkflowButton} from "@/features/editor/components/exute-workflow-button";
+import { nodeComponents } from "@/config/node-components";
+import { AddNodeButton } from "@/features/editor/components/add-node-button";
+import { useAtom } from "jotai";
+import { editorAtom } from "@/features/editor/store/atoms";
+import { NodeType } from "@prisma/client";
+import { ExecuteWorkflowButton } from "@/features/editor/components/exute-workflow-button";
 
 
 export const EditorLoading = () => {
     return (
-        <LoadingView message={"Loading editor"}/>
+        <LoadingView message={"Loading editor"} />
     )
 }
 
 export const EditorError = () => {
     return (
-        <ErrorView message={"Error loading Editor"}/>
+        <ErrorView message={"Error loading Editor"} />
     )
 }
 
 
-export const EditorName = ({workflowId}: { workflowId: string }) => {
-    const {data: workflow} = useSuspenseWorkflow(workflowId)
+export const EditorName = ({ workflowId }: { workflowId: string }) => {
+    const { data: workflow } = useSuspenseWorkflow(workflowId)
     const updateWorkflowName = useUpdateWorkflowName()
 
     return (
@@ -47,9 +47,9 @@ export const EditorName = ({workflowId}: { workflowId: string }) => {
 }
 
 
-export const Editor = ({workflowId}: { workflowId: string }) => {
+export const Editor = ({ workflowId }: { workflowId: string }) => {
 
-    const {data: workflow} = useSuspenseWorkflow(workflowId)
+    const { data: workflow } = useSuspenseWorkflow(workflowId)
 
     const [_, setEditor] = useAtom(editorAtom)
     const [edges, setEdges] = useState<Edge[]>(workflow.edges);
@@ -93,19 +93,19 @@ export const Editor = ({workflowId}: { workflowId: string }) => {
 
                 // snapGrid={[10, 10]}
                 snapToGrid
-                // panOnScroll
-                // panOnDrag={false}
-                // selectionOnDrag
+            // panOnScroll
+            // panOnDrag={false}
+            // selectionOnDrag
             >
-                <Background/>
-                <Controls/>
-                <MiniMap/>
+                <Background />
+                <Controls />
+                <MiniMap />
                 <Panel position={"top-right"}>
-                    <AddNodeButton/>
+                    <AddNodeButton />
                 </Panel>
                 {hasManualTrigger && (
                     <Panel position={"bottom-center"}>
-                        <ExecuteWorkflowButton workflowId={workflowId}/>
+                        <ExecuteWorkflowButton workflowId={workflowId} />
                     </Panel>
                 )}
                 <Panel position={"top-center"}>

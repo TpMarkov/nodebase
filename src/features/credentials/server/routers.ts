@@ -1,22 +1,22 @@
-import {createTRPCRouter, premiumProcedure, protectedProcedure} from "@/trpc/init";
+import { createTRPCRouter, premiumProcedure, protectedProcedure } from "@/trpc/init";
 import prisma from "@/lib/db";
-import {z} from "zod";
-import {PAGINATION} from "@/config/constants";
-import {CredentialType} from "@/generated/prisma/enums";
-import {encrypt} from "@/lib/encription";
+import { z } from "zod";
+import { PAGINATION } from "@/config/constants";
+import { CredentialType } from "@prisma/client";
+import { encrypt } from "@/lib/encription";
 
 
 export const credentialsRouter = createTRPCRouter({
   create:
-      premiumProcedure
+    premiumProcedure
       .input(z.object({
         name: z.string().min(1, "Name is required"),
         type: z.enum(CredentialType),
         value: z.string().min(1, "Value is required")
       }))
       .mutation
-      (({ctx, input}) => {
-        const {name, type, value} = input
+      (({ ctx, input }) => {
+        const { name, type, value } = input
 
         return prisma.credential.create({
           data: {
@@ -29,13 +29,13 @@ export const credentialsRouter = createTRPCRouter({
       }),
 
   remove:
-      protectedProcedure
+    protectedProcedure
       .input(
-          z.object({
-            id: z.string(),
-          })
+        z.object({
+          id: z.string(),
+        })
       )
-      .mutation(({ctx, input}) => {
+      .mutation(({ ctx, input }) => {
         return prisma.credential.delete({
           where: {
             id: input.id,
@@ -45,39 +45,39 @@ export const credentialsRouter = createTRPCRouter({
       }),
 
   update:
-      protectedProcedure
+    protectedProcedure
       .input(z.object({
         id: z.string(),
         name: z.string().min(1, "Name is required"),
         type: z.enum(CredentialType),
         value: z.string().min(1, "Value is required")
       }))
-      .mutation(async ({ctx, input}) => {
-            const {id, name, type, value} = input
+      .mutation(async ({ ctx, input }) => {
+        const { id, name, type, value } = input
 
-            return prisma.credential.update({
-              where: {
-                id: input.id,
-                userId: ctx.auth.user.id,
-              },
-              data: {
-                name,
-                type,
-                value: encrypt(value)
-              }
-            })
+        return prisma.credential.update({
+          where: {
+            id: input.id,
+            userId: ctx.auth.user.id,
+          },
+          data: {
+            name,
+            type,
+            value: encrypt(value)
           }
+        })
+      }
       ),
 
   getOne:
-      protectedProcedure
+    protectedProcedure
       .input
       (
-          z.object({
-            id: z.string(),
-          })
+        z.object({
+          id: z.string(),
+        })
       )
-      .query(({ctx, input}) => {
+      .query(({ ctx, input }) => {
         return prisma.credential.findUniqueOrThrow({
           where: {
             id: input.id,
@@ -87,20 +87,20 @@ export const credentialsRouter = createTRPCRouter({
       }),
 
   getMany:
-      protectedProcedure
+    protectedProcedure
       .input(
-          z.object({
-            page: z.number().default(PAGINATION.DEFAULT_PAGE),
-            pageSize: z
+        z.object({
+          page: z.number().default(PAGINATION.DEFAULT_PAGE),
+          pageSize: z
             .number()
             .min(PAGINATION.MIN_PAGE_SIZE)
             .max(PAGINATION.MAX_PAGE_SIZE)
             .default(PAGINATION.DEFAULT_PAGE_SIZE),
-            search: z.string().default(""),
-          })
+          search: z.string().default(""),
+        })
       )
-      .query(async ({ctx, input}) => {
-        const {page, pageSize, search} = input;
+      .query(async ({ ctx, input }) => {
+        const { page, pageSize, search } = input;
 
         const [items, totalCount] = await Promise.all([
           prisma.credential.findMany({
@@ -144,18 +144,18 @@ export const credentialsRouter = createTRPCRouter({
       }),
 
   getByType: protectedProcedure
-  .input(z.object({
-    type: z.enum(CredentialType)
-  })).query(({ctx, input}) => {
+    .input(z.object({
+      type: z.enum(CredentialType)
+    })).query(({ ctx, input }) => {
 
-    return prisma.credential.findMany({
-      where: {
-        type: input.type,
-        userId: ctx.auth.user.id,
-      }, orderBy: {
-        updatedAt: "desc"
-      }
+      return prisma.credential.findMany({
+        where: {
+          type: input.type,
+          userId: ctx.auth.user.id,
+        }, orderBy: {
+          updatedAt: "desc"
+        }
+      })
     })
-  })
 })
 

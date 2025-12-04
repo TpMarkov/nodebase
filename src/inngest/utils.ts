@@ -1,8 +1,8 @@
 import toposort from "toposort"
-import {Connection, Node} from "@/generated/prisma/client";
-import {NonRetriableError} from "inngest";
-import {inngest} from "@/inngest/client";
-import {createId} from "@paralleldrive/cuid2"
+import { Connection, Node } from "@prisma/client";
+import { NonRetriableError } from "inngest";
+import { inngest } from "@/inngest/client";
+import { createId } from "@paralleldrive/cuid2"
 
 export const topologicalSort = (nodes: Node[], connections: Connection[]): Node[] => {
 
@@ -42,7 +42,7 @@ export const topologicalSort = (nodes: Node[], connections: Connection[]): Node[
     throw e
   }
 
-// Map sorted IDs back to nodes object
+  // Map sorted IDs back to nodes object
   const nodeMap = new Map(nodes.map((n) => [n.id, n]))
   return sortedNodeIds.map((id) => nodeMap.get(id)!).filter(Boolean)
 }

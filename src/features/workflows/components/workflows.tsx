@@ -13,7 +13,7 @@ import { useUpgradeModal } from "@/hooks/use-modal";
 import { useRouter } from "next/navigation";
 import { useWorkflowsParams } from "@/features/workflows/hooks/use-workflows-params";
 import { useEntitySearch } from "@/hooks/use-entity-search";
-import type { Workflow } from "@/generated/prisma/browser";
+import type { Workflow } from "@prisma/client";
 import { WorkflowIcon } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 

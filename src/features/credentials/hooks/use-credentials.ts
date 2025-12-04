@@ -1,11 +1,11 @@
 /**
  * Hook to fetch all credentials using suspense
  */
-import {useTRPC} from "@/trpc/client";
-import {useMutation, useQuery, useQueryClient, useSuspenseQuery} from "@tanstack/react-query";
-import {toast} from "sonner";
-import {useCredentialsParams} from "@/features/credentials/hooks/use-credentials-params";
-import {CredentialType} from "@/generated/prisma/enums";
+import { useTRPC } from "@/trpc/client";
+import { useMutation, useQuery, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
+import { toast } from "sonner";
+import { useCredentialsParams } from "@/features/credentials/hooks/use-credentials-params";
+import { CredentialType } from "@prisma/client";
 
 export const useSuspenseCredentials = () => {
 
@@ -62,7 +62,7 @@ export const useRemoveCredential = () => {
 
 export const useSuspenseCredential = (id: string) => {
   const trpc = useTRPC()
-  return useSuspenseQuery(trpc.credentials.getOne.queryOptions({id}))
+  return useSuspenseQuery(trpc.credentials.getOne.queryOptions({ id }))
 }
 
 
@@ -77,7 +77,7 @@ export const useUpdateCredential = () => {
     onSuccess: (data) => {
       toast.success(`Credential ${data.name} saved successfully.`)
       queryClient.invalidateQueries(trpc.credentials.getMany.queryOptions({}))
-      queryClient.invalidateQueries(trpc.credentials.getOne.queryOptions({id: data.id}))
+      queryClient.invalidateQueries(trpc.credentials.getOne.queryOptions({ id: data.id }))
     }, onError: (err) => {
       toast.error(err.message)
     }
@@ -89,5 +89,5 @@ export const useUpdateCredential = () => {
  */
 export const useCredentialsByType = (type: CredentialType) => {
   const trpc = useTRPC()
-  return useQuery(trpc.credentials.getByType.queryOptions({type}))
+  return useQuery(trpc.credentials.getByType.queryOptions({ type }))
 }
