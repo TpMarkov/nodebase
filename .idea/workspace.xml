@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add fix to google and github buttons redirecting twice on sign in and sign-up">
-      <change beforePath="$PROJECT_DIR$/src/lib/polar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/polar.ts" afterDir="false" />
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add polar fix">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth-client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -387,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764788300398</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add polar fix">
+      <option name="closed" value="true" />
+      <created>1764789090344</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1764789090344</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +433,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add small fixes to 16-node-types" />
     <MESSAGE value="add small fixes with imports and on deleting node to cascate all the existing connections" />
     <MESSAGE value="add fix to generic types base-node.tsx" />
     <MESSAGE value="18-execute-httpRequest" />
@@ -447,7 +457,8 @@
     <MESSAGE value="add last changes to executions" />
     <MESSAGE value="27-executions-history" />
     <MESSAGE value="add fix to google and github buttons redirecting twice on sign in and sign-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fix to google and github buttons redirecting twice on sign in and sign-up" />
+    <MESSAGE value="add polar fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="add polar fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

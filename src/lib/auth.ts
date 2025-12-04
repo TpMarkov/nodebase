@@ -5,23 +5,13 @@ import {polar, checkout, portal} from "@polar-sh/better-auth"
 import {polarClient} from "./polar"
 
 export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL || process.env.NEXT_PUBLIC_APP_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
   database: prismaAdapter(prisma, {
     provider: "postgresql",
-
   }),
   emailAndPassword: {
     enabled: true,
     autoSignIn: true,
-  },
-  socialProviders: {
-    github: {
-      clientId: process.env.GITHUB_CLIENT_ID as string,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
-    },
-    google: {
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-    }
   },
   plugins: [
     polar({
