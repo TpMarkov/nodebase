@@ -18,7 +18,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Nodebase",
+<<<<<<< HEAD
   description: "*A production-ready, full-stack workflow automation platform with AI integration and real-time execution monitoring",
+=======
+  description: "A production-ready, full-stack workflow automation platform with AI integration and real-time execution monitoring",
+>>>>>>> 7b90b49df99c0bbc4d2466b1ebf85655bdda49cc
 };
 
 export default function RootLayout({
