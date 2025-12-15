@@ -45,13 +45,6 @@ Check out the live application here: **[https://nodebase-workflow.vercel.app/](h
 ![Editor Placeholder](https://i.ibb.co/XNz2VqR/setup-credentials.png)
 ![Editor Placeholder](https://i.ibb.co/hR55FCRp/execution-history.png)
 
-> **How to add your own images:**
-> 1. Take screenshots of your application.
-> 2. Resize them or ensure they look good at a smaller scale (recommended width ~800px for full details, but displayed smaller).
-> 3. Store them in a `public/images` folder (create it if it doesn't exist).
-> 4. Replace the URLs above with relative paths like `![Dashboard View](/images/dashboard-screenshot.png)`.
-> *Note: The placeholders above use `https://placehold.co` for demonstration.*
-
 ## 💻 Getting Started (For Developers)
 
 Follow these instructions to set up the project locally.
