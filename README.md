@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # NodeBase Workflow
 
 NodeBase Workflow is a powerful, visual automation platform designed to help you streamline tasks and integrate various services with ease. Built with modern web technologies, it offers a seamless and intuitive experience for building complex workflows without writing code.
@@ -37,11 +37,13 @@ This project is built using a cutting-edge stack for performance, scalability, a
 Check out the live application here: **[https://nodebase-workflow.vercel.app/](https://nodebase-workflow.vercel.app/)**
 
 ### Dashboard
-![Dashboard Placeholder](https://placehold.co/300x200?text=Dashboard+View)
+![Dashboard Placeholder](https://i.ibb.co/jkJG1tT8/sign-in.png)
 *View and manage your workflows.*
 
 ### Workflow Editor
-![Editor Placeholder](https://placehold.co/300x200?text=Workflow+Editor)
+![Editor Placeholder](https://i.ibb.co/dS6Mz4X/functions.png)
+![Editor Placeholder](https://i.ibb.co/MDTTk9Dq/execution-history.png)
+![Editor Placeholder](https://i.ibb.co/4w339jDK/workflow-setup.png)
 *Drag-and-drop interface for building automation logic.*
 
 > **How to add your own images:**
