@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add polar fix">
-      <change afterPath="$PROJECT_DIR$/public/logos/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="8513f8a2-32dd-49cb-b5d8-67bef3a58a9a" name="Changes" comment="add favicon and change app title" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,37 +48,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.127.0.0.1:4040.executor": "Debug",
-    "JavaScript Debug.127.0.0.1:8288.executor": "Debug",
-    "JavaScript Debug.stripe.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "full.screen.before.presentation.mode": "true",
-    "git-widget-placeholder": "Reverting in main",
-    "ignore.virus.scanning.warn.message": "true",
-    "js.debugger.nextJs.config.created.client": "true",
-    "last_opened_file_path": "D:/Portfolio PROJECTS/nodebase/src/app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.127.0.0.1:4040.executor&quot;: &quot;Debug&quot;,
+    &quot;JavaScript Debug.127.0.0.1:8288.executor&quot;: &quot;Debug&quot;,
+    &quot;JavaScript Debug.stripe.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Reverting in main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Portfolio PROJECTS/nodebase/src/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Portfolio PROJECTS\\nodebase\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Portfolio PROJECTS\nodebase\src\app" />
+      <recent name="D:\Portfolio PROJECTS\nodebase\public\logos" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\inngest\channels" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\app\api\realtime" />
       <recent name="D:\Portfolio PROJECTS\nodebase\src\features\executions\components" />
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\credentials\server" />
-      <recent name="D:\Portfolio PROJECTS\nodebase\src\features\credentials" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Portfolio PROJECTS\nodebase\src\components\react-flow" />
@@ -190,7 +184,9 @@
       <workItem from="1764746858277" duration="3028000" />
       <workItem from="1764751950451" duration="1921000" />
       <workItem from="1764755160632" duration="2086000" />
-      <workItem from="1764838950776" duration="314000" />
+      <workItem from="1764838950776" duration="484000" />
+      <workItem from="1764843236746" duration="8000" />
+      <workItem from="1764845787509" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="add some changes">
       <option name="closed" value="true" />
@@ -400,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764789090344</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add favicon and change app title">
+      <option name="closed" value="true" />
+      <created>1764839321604</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1764839321604</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +439,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add small fixes with imports and on deleting node to cascate all the existing connections" />
     <MESSAGE value="add fix to generic types base-node.tsx" />
     <MESSAGE value="18-execute-httpRequest" />
     <MESSAGE value="add fixes to : 18-execute-httpRequest" />
@@ -460,7 +463,8 @@
     <MESSAGE value="27-executions-history" />
     <MESSAGE value="add fix to google and github buttons redirecting twice on sign in and sign-up" />
     <MESSAGE value="add polar fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="add polar fix" />
+    <MESSAGE value="add favicon and change app title" />
+    <option name="LAST_COMMIT_MESSAGE" value="add favicon and change app title" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
