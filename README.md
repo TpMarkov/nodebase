@@ -37,12 +37,13 @@ This project is built using a cutting-edge stack for performance, scalability, a
 Check out the live application here: **[https://nodebase-workflow.vercel.app/](https://nodebase-workflow.vercel.app/)**
 
 ### Dashboard
-![Dashboard Placeholder](https://placehold.co/300x200?text=Dashboard+View)
-*View and manage your workflows.*
+![Dashboard Placeholder](https://ibb.co/4R1M5k7F)
 
 ### Workflow Editor
-![Editor Placeholder](https://placehold.co/300x200?text=Workflow+Editor)
-*Drag-and-drop interface for building automation logic.*
+![Editor Placeholder](https://ibb.co/wNHHhYND)
+![Editor Placeholder](https://ibb.co/8nttTjRN)
+![Editor Placeholder](https://ibb.co/xPMC3NT)
+![Editor Placeholder](https://ibb.co/wNHHhYND)
 
 > **How to add your own images:**
 > 1. Take screenshots of your application.
