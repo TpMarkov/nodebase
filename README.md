@@ -42,12 +42,12 @@ Check out the live application here: **[https://nodebase-workflow.vercel.app/](h
 | Home Page | Execution History |
 | :---: | :---: |
 | ![Home Page](https://i.ibb.co/1GzKwcL0/sign-in.png) | ![Execution History](https://i.ibb.co/hR55FCRp/execution-history.png) |
-| *Modern Landing Page* | *Rich Text Editing* |
+| *Sign-in landing page* | *Live workflow execution history* |
 
 | Setup Playground | Workflow Playground |
 | :---: | :---: |
 | ![Setup Workflow](https://i.ibb.co/4w339jDK/workflow-setup.png) | ![Choose what to do](https://i.ibb.co/kp0BW2z/functions.png) |
-| *Clean Reading Experience* | *Real-time Discussion* |
+| *Multiple setup options to choose from* | *Open-Ai and Gemini calls + much more ...* |
 
 ## 💻 Getting Started (For Developers)
 
