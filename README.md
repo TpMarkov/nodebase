@@ -36,14 +36,18 @@ This project is built using a cutting-edge stack for performance, scalability, a
 
 Check out the live application here: **[https://nodebase-workflow.vercel.app/](https://nodebase-workflow.vercel.app/)**
 
-### Dashboard
-![Dashboard Placeholder](https://i.ibb.co/1GzKwcL0/sign-in.png)
+## 5. Project Gallery
+*To add your own images, replace the URLs below with screenshots of your application found in your `public` folder or hosted externally.*
 
-### Workflow Editor
-![Editor Placeholder](https://i.ibb.co/kp0BW2z/functions.png)
-![Editor Placeholder](https://i.ibb.co/4w339jDK/workflow-setup.png)
-![Editor Placeholder](https://i.ibb.co/XNz2VqR/setup-credentials.png)
-![Editor Placeholder](https://i.ibb.co/hR55FCRp/execution-history.png)
+| Home Page | Workflow Editor |
+| :---: | :---: |
+| ![Home Page](https://i.ibb.co/1GzKwcL0/sign-in.png) | ![Setup Credentials](https://i.ibb.co/XNz2VqR/setup-credentials.png) |
+| *Modern Landing Page* | *Rich Text Editing* |
+
+| Blog Post | Workflow Playground |
+| :---: | :---: |
+| ![Setup Workflow](https://i.ibb.co/4w339jDK/workflow-setup.png) | ![Choose what to do](https://i.ibb.co/kp0BW2z/functions.png) |
+| *Clean Reading Experience* | *Real-time Discussion* |
 
 ## 💻 Getting Started (For Developers)
 
