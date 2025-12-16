@@ -44,7 +44,7 @@ Check out the live application here: **[https://nodebase-workflow.vercel.app/](h
 | ![Home Page](https://i.ibb.co/1GzKwcL0/sign-in.png) | ![Execution History](https://i.ibb.co/hR55FCRp/execution-history.png) |
 | *Modern Landing Page* | *Rich Text Editing* |
 
-| Blog Post | Workflow Playground |
+| Setup Playground | Workflow Playground |
 | :---: | :---: |
 | ![Setup Workflow](https://i.ibb.co/4w339jDK/workflow-setup.png) | ![Choose what to do](https://i.ibb.co/kp0BW2z/functions.png) |
 | *Clean Reading Experience* | *Real-time Discussion* |
