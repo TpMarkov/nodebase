@@ -39,9 +39,9 @@ Check out the live application here: **[https://nodebase-workflow.vercel.app/](h
 ## 5. Project Gallery
 *To add your own images, replace the URLs below with screenshots of your application found in your `public` folder or hosted externally.*
 
-| Home Page | Workflow Editor |
+| Home Page | Execution History |
 | :---: | :---: |
-| ![Home Page](https://i.ibb.co/1GzKwcL0/sign-in.png) | ![Setup Credentials](https://i.ibb.co/XNz2VqR/setup-credentials.png) |
+| ![Home Page](https://i.ibb.co/1GzKwcL0/sign-in.png) | ![Execution History](https://i.ibb.co/hR55FCRp/execution-history.png) |
 | *Modern Landing Page* | *Rich Text Editing* |
 
 | Blog Post | Workflow Playground |
