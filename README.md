@@ -21,7 +21,7 @@ NodeBase Workflow is a powerful, visual automation platform designed to help you
 
 Whether you're looking to automate repetitive tasks, connect APIs, or build sophisticated logic flows, NodeBase Workflow provides the tools you need in a drag-and-drop interface.
 
-## 📸 Screenshots Gallery
+## � Screenshots Gallery
 
 | Landing & Login | Workflows Dashboard |
 | :---: | :---: |
@@ -112,4 +112,3 @@ This project is licensed under the MIT License.
 
 Contributions are welcome! Please open an issue or submit a pull request. 
 For questions, feel free to contact [TpMarkov](https://github.com/TpMarkov).
-
